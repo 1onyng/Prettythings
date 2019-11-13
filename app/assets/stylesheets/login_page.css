@@ -122,3 +122,14 @@
   top: 96px;
   height: 437px;
 }
+
+.login-errors {
+  color: red;
+  list-style-type: none;
+}
+
+.login-errors-ul {
+  height: 40px;
+  width: 100%;
+  text-align: left;
+}

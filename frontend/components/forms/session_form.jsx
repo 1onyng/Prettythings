@@ -31,10 +31,23 @@ export default class SessionForm extends React.Component {
     })
   }
 
+  renderErrors() {
+    return (
+      <ul className="login-errors">
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
   render() {
-    const errors = this.props.errors.map((error, i) => {
-      return <li key={i}>{error}</li>
-    });
+    // const errors = this.props.errors.map((error, i) => {
+    //   return <li key={i}>{error}</li>
+    // });
+
     let link; 
     let path;
     let instruct;
@@ -104,15 +117,17 @@ export default class SessionForm extends React.Component {
                   onClick={this.demoUser}>
                   Demo Log in 
                 </button>
-                <ul className="login-errors">
-                  {errors}
-                </ul>
+                <div className="login-errors-ul">
+                  {this.renderErrors()}
+                </div>
               </div> 
             </form>
           </div>
           <div className="login-signup-link">
+            <div>
               {instruct}
               <Link to={path}>{link}</Link>
+            </div>
           </div>
         </div>
       </div>
