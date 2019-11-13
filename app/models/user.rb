@@ -6,6 +6,38 @@ class User < ApplicationRecord
   attr_reader :password
  
   after_initialize :ensure_session_token
+
+  has_many :comments,
+    dependent: :destroy
+
+  has_many :posts,
+    dependent: :destroy
+
+  has_many :likes, 
+    dependent: :destroy
+
+  has_many :active_follows,  
+    class_name: :Follow,
+    foreign_key: :user_id,
+    dependent: :destroy
+
+  has_many :passive_follows, 
+    class_name: :Follow,
+    foreign_key: :followed_user_id,
+    dependent: :destroy
+
+  has_many :follows, 
+    through: :active_follows,
+    source: :following,
+    dependent: :destroy
+
+  has_many :followers, 
+    through: :passive_follows, 
+    source: :follower,
+    dependent: :destroy
+
+  has_one_attached :photo,
+    dependent: :destroy
  
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
