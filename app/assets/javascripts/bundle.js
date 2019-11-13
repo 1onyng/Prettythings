@@ -333,13 +333,22 @@ function (_React$Component) {
       });
     }
   }, {
+    key: "renderErrors",
+    value: function renderErrors() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "login-errors"
+      }, this.props.errors.map(function (error, i) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          key: "error-".concat(i)
+        }, error);
+      }));
+    }
+  }, {
     key: "render",
     value: function render() {
-      var errors = this.props.errors.map(function (error, i) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-          key: i
-        }, error);
-      });
+      // const errors = this.props.errors.map((error, i) => {
+      //   return <li key={i}>{error}</li>
+      // });
       var link;
       var path;
       var instruct;
@@ -398,13 +407,13 @@ function (_React$Component) {
       }, this.props.formType), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\xA0OR\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "button demo",
         onClick: this.demoUser
-      }, "Demo Log in"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-        className: "login-errors"
-      }, errors)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Demo Log in"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "login-errors-ul"
+      }, this.renderErrors())))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "login-signup-link"
-      }, instruct, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, instruct, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: path
-      }, link))));
+      }, link)))));
     }
   }]);
 
