@@ -1,0 +1,135 @@
+.feed-image {
+  width: 500px;
+  height: 500px;
+}
+
+.feed-image:hover {
+  cursor: pointer;
+}
+
+.feed-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-top: 125px;
+}
+
+.feed-left,
+.feed-right {
+  width: 20%;
+}
+
+.feed-mid {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.feed-images {
+  list-style: none;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  padding-left: 0px;
+}
+
+.feed-image-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  border: 1px solid lightgrey;
+  margin-bottom: 35px;
+  border-radius: 3px;
+  filter: drop-shadow(8px 21px 12px rgba(0, 0, 0, 0.2));
+}
+.feed-image-box:hover {
+  cursor: pointer;
+}
+
+.feed-image-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  width: 500px;
+  background-color: white;
+}
+
+.feed-image-header-wrap {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid lightgrey;
+}
+
+.feed-image-header-wrap a {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+.feed-image-bottom {
+  margin-left: 5px;
+  font-family: "Roboto", sans-serif;
+  max-height: 210px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: center;
+}
+
+.profile-link,
+.feed-profile-link {
+  text-decoration: none;
+  color: black;
+  font-family: "Roboto", sans-serif;
+  font-weight: bolder;
+}
+
+a.feed-profile-link {
+  -webkit-font-smoothing: antialiased;
+}
+
+.feed-profile-pic {
+  width: 30px;
+  height: 30px;
+  padding-left: 5px;
+  padding-right: 7px;
+  border-radius: 50%;
+}
+
+.feed-image-bottom-buttons {
+  display: flex;
+  align-items: center;
+}
+.like-icon {
+  height: 2px;
+}
+
+.likes {
+  padding-right: 20px;
+  padding-left: 6px;
+}
+.feed-image-bottom-likes,
+.feed-image-bottom-bio {
+  display: flex;
+  flex-direction: row;
+  /* padding-right: 10px; */
+  padding-left: 8px;
+}
+
+.feed-comment-form {
+  display: flex;
+  align-items: center;
+  height: 45px;
+  margin-bottom: 8px;
+  align-self: center;
+}
+
+.feed-bio {
+  padding-bottom: 3px;
+}

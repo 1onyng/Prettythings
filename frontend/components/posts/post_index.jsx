@@ -11,19 +11,26 @@ class PostIndex extends React.Component {
 
   render() {
     const { posts } = this.props;
-
     return (
       <div>
-        <ul>
-          {
-            posts.map(post => (
-              <PostIndexItem
-                post={post}
-                key={post.id}
-              />
-            ))
-          }
-        </ul>
+        <section className="feed-container">
+          <div className="feed-left"></div>
+          <div className="feed-mid">
+            <ul className="feed-images">
+              {posts.map((post, i) => {
+                return (
+                  <div key={i}>
+                    <PostIndexItem
+                      key={post.id} 
+                      post={post} 
+                    />
+                  </div>
+                );
+              })}
+            </ul>
+          </div>
+          <div className="feed-right"></div>
+        </section>
       </div>
     );
   }
