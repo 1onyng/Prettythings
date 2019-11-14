@@ -10,12 +10,19 @@ class PostIndexItem extends React.Component {
     let { post } = this.props;
 
     return (
-      <div>
-        <li>{post.title}</li>
-        <img src={post.photoUrl} />
-      </div>
+      <li className="feed-image-box">
+        <div className="feed-image-header">
+          <div className="feed-image-header-wrap">
+            </div>
+              <img className="feed-image" src={post.photoUrl} />
+              <div className="title-span">{post.title}</div>
+            <div className="feed-image-bottom">
+          </div>
+        </div>
+      </li>
     );
   }
+
 }
 
 export default PostIndexItem
