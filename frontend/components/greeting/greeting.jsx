@@ -16,8 +16,8 @@ const Greeting = ({ currentUser, logout }) => {
   } else {
     return (
       <div>
-        <Link to='/login'>Log In</Link>
-        <Link to='/signup'>Sign Up</Link>
+        {/* <Link to='/login'>Log In</Link>
+        <Link to='/signup'>Sign Up</Link> */}
       </div>
     )
   }
