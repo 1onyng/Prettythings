@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+
 class PostShow extends React.Component {
   constructor(props) {
     super(props);
@@ -30,7 +31,7 @@ class PostShow extends React.Component {
       return <h2>Loading...</h2>;
     }
 
-  const { photoUrl, author, title, user_id } = this.props.post;
+  const { photoUrl, author, title, user_id, likers } = this.props.post;
     
     return (
       <div>
@@ -74,7 +75,7 @@ class PostShow extends React.Component {
               </span>
               <span>{postComments}</span>
             </div> */}
-            {/* <div className="post-show-likes">
+            <div className="post-show-likes">
               <div className="likes-div">
                 <div className="show-buttons">
                   <LikesContainer post={this.props.post} likers={likers} />
@@ -89,7 +90,7 @@ class PostShow extends React.Component {
                     : `${likers.length} likes`}
                 </div>
               </div>
-              <div className="show-comment-container">
+              {/* <div className="show-comment-container">
                 <form className="show-comment-form">
                   <input
                     className="show-textarea"
@@ -104,8 +105,8 @@ class PostShow extends React.Component {
                     Post
                   </button>
                 </form>
-              </div>
-            </div> */}
+              </div> */}
+            </div>
           </div>
         </div>
       </div>

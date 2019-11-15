@@ -10,6 +10,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
+  debugger;
   return {
     fetchAllPosts: () => dispatch(fetchAllPosts()),
     openModal: data => dispatch(openModal("showPhoto", data)),
