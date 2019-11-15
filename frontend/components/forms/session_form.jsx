@@ -72,6 +72,7 @@ export default class SessionForm extends React.Component {
             <img
               className="login-left-image"
               src="https://www.instagram.com/static/images/homepage/home-phones@2x.png/9364675fb26a.png"
+              // src={window.login-form-phoneURL}
             />
             <img
               className="login-left-image-inner"

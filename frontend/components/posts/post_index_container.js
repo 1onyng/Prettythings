@@ -1,6 +1,7 @@
 import PostIndex from "./post_index";
 import { fetchAllPosts } from "../../actions/post_actions";
 import { connect } from "react-redux";
+import { closeModal, openModal } from "../../actions/modal_actions";
 
 const mapStateToProps = state => {
   return {
@@ -11,6 +12,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     fetchAllPosts: () => dispatch(fetchAllPosts()),
+    openModal: data => dispatch(openModal("showPhoto", data)),
+    closeModal: () => dispatch(closeModal())
   };
 };
 

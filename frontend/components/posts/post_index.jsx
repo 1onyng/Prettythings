@@ -1,5 +1,5 @@
 import React from "react";
-import PostIndexItem from "./post_index_item";
+import PostIndexItemContainer from "./post_index_item_container";
 
 class PostIndex extends React.Component {
   constructor(props) {
@@ -7,6 +7,7 @@ class PostIndex extends React.Component {
   }
   componentDidMount() {
     this.props.fetchAllPosts();
+    this.props.closeModal();
   }
 
   render() {
@@ -20,7 +21,7 @@ class PostIndex extends React.Component {
               {posts.map((post, i) => {
                 return (
                   <div key={i}>
-                    <PostIndexItem
+                    <PostIndexItemContainer
                       key={post.id} 
                       post={post} 
                     />
