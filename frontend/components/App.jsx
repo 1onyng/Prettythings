@@ -14,7 +14,6 @@ const App = () => {
   <div className="page">
     <Modal/>
     <header>
-      <h1>Welcome to Pretty Things</h1> 
       <GreetingContainer/>
     </header>
     <Switch>

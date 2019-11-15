@@ -45,7 +45,8 @@ class PostShow extends React.Component {
                 </Link>
               </div> */}
               <div className="post-author-delete">
-                {user_id === this.props.user.id ? (
+                {user_id === this.props.user.id ||
+                  this.props.currentUser.username === "pretty_things_admin" ?(
                     <button className="delete-button" onClick={this.handleDelete}>
                       Delete <i className="fas fa-trash-alt"></i>
                     </button>
