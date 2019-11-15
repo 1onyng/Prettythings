@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import LikesContainer from "../like/like_container";
 
 
 class PostShow extends React.Component {

@@ -1,5 +1,6 @@
 import { RECEIVE_ALL_POSTS, RECEIVE_POST, REMOVE_POST } from '../actions/post_actions';
 import { RECEIVE_LIKE, REMOVE_LIKE } from '../actions/likes_actions';
+import merge from "lodash/merge";
 
 const PostsReducer = (oldState = {}, action) => {
   let newObj = {};
@@ -25,8 +26,8 @@ const PostsReducer = (oldState = {}, action) => {
         id => id !== action.like.user_id
       );
       temp.likers = filtered_likers;
-      newState = merge({}, oldState, { [action.like.post_id]: temp });
-      return newState;
+      nextState = merge({}, oldState, { [action.like.post_id]: temp });
+      return nextState;
     default:
       return oldState;
   }
