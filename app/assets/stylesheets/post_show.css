@@ -1,0 +1,101 @@
+.post-show-image {
+  width: 500px;
+  height: 500px;
+}
+
+.post-box {
+  display: flex;
+  border: 1px solid lightgrey;
+  font-family: 'Roboto', sans-serif;
+}
+
+.post-show-detail-box {
+  width: 300px;
+  height: 500px;
+  background-color: white;
+  display: flex;
+
+  flex-direction: column;
+  align-items: left;
+  border-left: 1px solid lightgrey;
+  border-right: 1px solid lightgrey;
+}
+
+.post-author {
+  display: flex;
+  padding: 8px;
+  height: 40px;
+  font-weight: bolder;
+  text-decoration: none;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.author-link {
+  display: flex;
+  text-decoration: none;
+  color: black;
+  align-items: center;
+}
+
+.post-comments {
+  height: 300px;
+  border-top: 1px solid lightgrey;
+  border-bottom: 1px solid lightgrey;
+  padding-left: 8px;
+  padding-top: 8px;
+  overflow: auto;
+  font-size: 14px;
+}
+.post-show-likes {
+  padding-top: 8px;
+}
+
+.link-wrap {
+  display: flex;
+  width: 800px;
+  justify-content: flex-end;
+  padding-bottom: 3px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bolder;
+}
+
+.post-bio {
+  margin-bottom: 10px;
+}
+
+.show-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.show-icon {
+  padding-left: 8px;
+  padding-right: 5px;
+  color: black;
+  font-size: 28px;
+}
+
+.show-icon:hover {
+  cursor: pointer;
+  color: grey;
+}
+
+.delete-comment-button {
+  font-size: 10px;
+  color: grey;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.delete-button {
+  font-size: 18px;
+  color: black;
+  border: none;
+  outline: none;
+}
+
+.delete-button:hover {
+  cursor: pointer;
+}

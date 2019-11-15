@@ -7,6 +7,9 @@ const Greeting = ({ currentUser, logout }) => {
       <div>
         <p>Welcome {currentUser.username}</p>
         <button onClick={logout}>Log Out</button>
+        <div>
+          <Link to='/newpost'>Create Post</Link>
+        </div>
       </div>
     )
   } else {
