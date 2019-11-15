@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import LikeContainer from "../like/like_container";
 
 class PostIndexItem extends React.Component {
   constructor(props) {
@@ -13,12 +13,10 @@ class PostIndexItem extends React.Component {
       <li className="feed-image-box">
         <div className="feed-image-header">
           <div className="feed-image-header-wrap">
-            </div>
               <div onClick={() => this.props.openModal({ postId: post.id })}>
                 <img className="feed-image" src={post.photoUrl} />
                 <div className="title-span">{post.title}</div>
               </div>
-            <div className="feed-image-bottom">
           </div>
         </div>
       </li>
