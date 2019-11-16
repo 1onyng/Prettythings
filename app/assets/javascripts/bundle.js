@@ -436,7 +436,9 @@ var App = function App() {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_modal__WEBPACK_IMPORTED_MODULE_10__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_9__["ProtectedRoute"], {
     path: "/",
     component: _nav_bar_nav_bar_container__WEBPACK_IMPORTED_MODULE_7__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_9__["AuthRoute"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
+    className: "headerBar"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_9__["AuthRoute"], {
     path: "/login",
     component: _forms_login_form_container__WEBPACK_IMPORTED_MODULE_2__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_9__["AuthRoute"], {
@@ -444,18 +446,12 @@ var App = function App() {
     component: _forms_signup_form_container__WEBPACK_IMPORTED_MODULE_3__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_9__["ProtectedRoute"], {
     exact: true,
-    path: "/",
-    component: _posts_post_index_container__WEBPACK_IMPORTED_MODULE_4__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_9__["ProtectedRoute"], {
-    exact: true,
     path: "/newpost",
     component: _posts_create_post_container__WEBPACK_IMPORTED_MODULE_5__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_9__["AuthRoute"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_9__["ProtectedRoute"], {
     exact: true,
     path: "/",
-    component: _forms_signup_form_container__WEBPACK_IMPORTED_MODULE_3__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__["Redirect"], {
-    to: "/"
+    component: _posts_post_index_container__WEBPACK_IMPORTED_MODULE_4__["default"]
   })));
 };
 
@@ -586,7 +582,7 @@ function (_React$Component) {
     value: function demoUser(e) {
       e.preventDefault();
       this.props.processDemo({
-        username: 'hunter02',
+        username: 'demo_user',
         password: 'hunter02'
       });
     }
@@ -1044,6 +1040,7 @@ function (_React$Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(NavBar).call(this, props));
     _this.currentUser = _this.props.currentUser;
     _this.Logout = _this.Logout.bind(_assertThisInitialized(_this));
+    _this.handleNewPostForm = _this.handleNewPostForm.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -1051,6 +1048,13 @@ function (_React$Component) {
     key: "Logout",
     value: function Logout() {
       this.props.logout();
+    }
+  }, {
+    key: "handleNewPostForm",
+    value: function handleNewPostForm(e) {
+      e.preventDefault();
+      var path = "/newpost";
+      this.props.history.push(path);
     }
   }, {
     key: "render",
@@ -1073,8 +1077,11 @@ function (_React$Component) {
         className: "nav-right"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "nav-sign-out",
+        onClick: this.handleNewPostForm
+      }, "Add Photo"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "nav-sign-out",
         onClick: this.Logout
-      }, "log out"))));
+      }, "Log Out"))));
     }
   }]);
 
@@ -1253,6 +1260,7 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "new-post-form",
         onSubmit: this.handleSubmit
@@ -1685,7 +1693,8 @@ function (_React$Component) {
           author = _this$props$post.author,
           title = _this$props$post.title,
           user_id = _this$props$post.user_id,
-          likers = _this$props$post.likers;
+          likers = _this$props$post.likers,
+          authorPhotoUrl = _this$props$post.authorPhotoUrl;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "post-box"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {

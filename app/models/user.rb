@@ -38,7 +38,10 @@ class User < ApplicationRecord
 
   has_one_attached :photo,
     dependent: :destroy
- 
+
+  has_one_attached :profile_photo,
+    dependent: :destroy
+
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
     return nil unless user && user.valid_password?(password)

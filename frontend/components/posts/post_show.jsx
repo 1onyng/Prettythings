@@ -32,7 +32,7 @@ class PostShow extends React.Component {
       return <h2>Loading...</h2>;
     }
 
-  const { photoUrl, author, title, user_id, likers } = this.props.post;
+  const { photoUrl, author, title, user_id, likers, authorPhotoUrl } = this.props.post;
     
     return (
       <div>
