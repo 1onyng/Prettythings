@@ -12,7 +12,7 @@ photos = [
   "1.jpeg",
   "2.jpg",
   "3.jpg",
-  "4.jng",
+  "4.jpg",
 ]
 
 titles = [
@@ -29,7 +29,25 @@ demo_user = User.create!(username: "demo_user", password: "hunter02")
 
 until photos.empty?
   photo = photos.shift
-  post = Post.create!(title: titles.shift, user_id: demo_user.id)
-  file = open("https://pretty-things-seeds.s3-us-west-1.amazonaws.com/#{photo}")
+  post = Post.new(title: titles.shift, user_id: demo_user.id)
+  file = open("https://pretty-things-dev.s3-us-west-1.amazonaws.com/#{photo}")
   post.photo.attach(io: file, filename: photo)
+  post.save!
 end
+
+# post = Post.create!(title: "Sunrise on the lake", user_id: demo_user.id)
+# file = open('https://pretty-things-seeds.s3-us-west-1.amazonaws.com/1.jpeg')
+# post.photo.attach(io: file, filename: "1.jpeg")
+
+# post = Post.create!(title: "Lani's wedding", user_id: demo_user.id)
+# file = open('https://pretty-things-seeds.s3-us-west-1.amazonaws.com/2.jpg')
+# post.photo.attach(io: file, filename: "2.jpg")
+
+# post = Post.create!(title: "Paris vacation", user_id: demo_user.id)
+# file = open('https://pretty-things-seeds.s3-us-west-1.amazonaws.com/3.jpg')
+# post.photo.attach(io: file, filename: "3.jpg")
+
+# post = Post.create!(title: "This is just cool", user_id: demo_user.id)
+# file = open('https://pretty-things-seeds.s3-us-west-1.amazonaws.com/4.jpg')
+# post.photo.attach(io: file, filename: "4.jpg")
+
