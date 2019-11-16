@@ -26,7 +26,7 @@ export default class SessionForm extends React.Component {
   demoUser(e) {
     e.preventDefault();
     this.props.processDemo({
-      username: 'hunter02',
+      username: 'demo_user',
       password: 'hunter02'
     })
   }

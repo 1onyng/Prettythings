@@ -15,16 +15,15 @@ const App = () => {
   <div className="page">
     <Modal/>
     <ProtectedRoute path="/" component={NavBarContainer} />
-    <header>
-    </header>
+      <header className="headerBar"></header>
     <Switch>
       <AuthRoute path="/login" component={LoginFormContainer} />
       <AuthRoute path="/signup" component={SignupFormContainer} />
-      <ProtectedRoute exact path="/" component={PostIndexContainer} />
+      {/* <ProtectedRoute exact path="/" component={PostIndexContainer} /> */}
       <ProtectedRoute exact path="/newpost" component={CreatePostContainer} />
-      <AuthRoute exact path="/" component={SignupFormContainer} />
-      
-      <Redirect to="/"/>
+      {/* <AuthRoute exact path="/" component={SignupFormContainer} /> */}    
+      {/* <Redirect to="/"/> */}
+      <ProtectedRoute exact path="/" component={PostIndexContainer} />
     </Switch>
   </div>
   );
