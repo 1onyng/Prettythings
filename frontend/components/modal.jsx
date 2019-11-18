@@ -2,6 +2,7 @@ import React from "react";
 import { closeModal } from "../actions/modal_actions";
 import { connect } from "react-redux";
 import PostShowContainer from "./posts/post_show_container";
+import CommentErrorModal from "./posts/comment_error_modal";
 
 function Modal({ modal, closeModal }) {
   if (!modal) {
@@ -11,6 +12,9 @@ function Modal({ modal, closeModal }) {
   switch (modal.type) {
     case "showPhoto":
       component = <PostShowContainer data={modal.data} />;
+      break;
+    case "commentError":
+      component = <CommentErrorModal />;
       break;
     default:
       return null;

@@ -65,7 +65,6 @@ class CreatePost extends React.Component {
   }
 
   render() {
-    debugger;
     return (
       <form className="new-post-form" onSubmit={this.handleSubmit}>      
         <img src={this.state.photoUrl} />

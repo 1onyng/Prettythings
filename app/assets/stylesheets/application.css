@@ -13,7 +13,108 @@
  *= require_tree .
  *= require_self
  */
-/* .page {
+.page {
   margin-top: 30px;
-} */
+}
+.logout-button {
+  bottom: 20px;
+}
+.fotobox-logo {
+  font-family: "Satisfy", cursive;
+  font-weight: 80;
+  margin-bottom: 20px;
+}
 
+.long-errors {
+  color: red;
+}
+.main {
+  display: block;
+}
+ul {
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}
+
+h1 {
+  display: block;
+  font-size: 2em;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+.feed-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.feed-left {
+  width: 20%;
+}
+.feed-right {
+  width: 20%;
+}
+
+.feed-mid {
+  margin-top: 40px;
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.feed-images {
+  list-style: none;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  padding-left: 0px;
+  padding: 1px;
+}
+.feed-image-box {
+  width: 100%;
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-content: center;
+  border: 1px solid lightgrey;
+  margin-bottom: 35px;
+  border-radius: 3px;
+}
+
+.feed-image-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  width: 450px;
+  background-color: white;
+}
+
+.feed-image-header-wrap {
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+.feed-image {
+  object-fit: cover;
+  width: 100%;
+  width: 450px;
+  height: 450px;
+}
+.feed-profile-pic {
+  width: 30px;
+  height: 30px;
+  padding-left: 5px;
+  padding-right: 7px;
+  border-radius: 50%;
+}
