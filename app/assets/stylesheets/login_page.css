@@ -127,6 +127,7 @@
 .login-errors {
   color: red;
   list-style-type: none;
+  padding-left: 0px;
 }
 
 .login-errors-ul {
