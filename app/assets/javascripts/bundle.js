@@ -675,6 +675,7 @@ function (_React$Component) {
   }, {
     key: "renderErrors",
     value: function renderErrors() {
+      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "login-errors"
       }, this.props.errors.map(function (error, i) {
