@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  namespace :api do
-    resources :comments
-  end
   root "static_pages#root"
 
   namespace :api, defaults: {format: :json} do
