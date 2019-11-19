@@ -1932,6 +1932,7 @@ function (_React$Component) {
     };
     _this.handleDelete = _this.handleDelete.bind(_assertThisInitialized(_this));
     _this.handleComment = _this.handleComment.bind(_assertThisInitialized(_this));
+    _this.renderErrors = _this.renderErrors.bind(_assertThisInitialized(_this));
     _this.closeModal = _this.closeModal.bind(_assertThisInitialized(_this));
     return _this;
   }
@@ -1951,6 +1952,12 @@ function (_React$Component) {
       return function (e) {
         return _this2.setState(_defineProperty({}, field, e.target.value));
       };
+    }
+  }, {
+    key: "closeModal",
+    value: function closeModal(e) {
+      e.preventDefault();
+      this.props.closeModal();
     }
   }, {
     key: "handleDelete",
@@ -2051,7 +2058,7 @@ function (_React$Component) {
         src: authorPhotoUrl
       }), author)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "post-author-delete"
-      }, user_id === this.props.user.id || this.props.currentUser.username === "pretty_things_admin" ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, user_id === this.props.user.id || this.props.user.username === "pretty_things_admin" ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "delete-button",
         onClick: this.handleDelete
       }, "Delete ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
