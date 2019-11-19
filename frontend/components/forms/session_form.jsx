@@ -32,7 +32,6 @@ export default class SessionForm extends React.Component {
   }
 
   renderErrors() {
-    debugger;
     return (
       <ul className="login-errors">
         {this.props.errors.map((error, i) => (

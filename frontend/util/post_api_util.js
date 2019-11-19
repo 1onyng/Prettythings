@@ -7,22 +7,29 @@ export const fetchAllPosts = () => (
 
 export const fetchPost = id => {
   return $.ajax({
-    url: `api/posts/${id}`,
-    method: "GET"
+    method: "GET",
+    url: `api/posts/${id}`
   });
 };
 
 export const createPost = post => {
   return $.ajax({
-    url: "api/posts",
     method: "POST",
+    url: "api/posts",
     data: { post }
   });
 };
 
 export const deletePost = id => {
   return $.ajax({
-    url: `api/posts/${id}`,
-    method: "DELETE"
+    method: "DELETE",
+    url: `api/posts/${id}`
+  });
+};
+
+export const fetchProfilePosts = id => {
+  return $.ajax({
+    method: "GET",
+    url: `api/profile/posts/${id}`
   });
 };

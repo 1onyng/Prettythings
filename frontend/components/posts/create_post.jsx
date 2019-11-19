@@ -49,13 +49,13 @@ class CreatePost extends React.Component {
       contentType: false,
       processData: false
     }).then(() => {
-      this.props.history.push("/");
+      this.props.history.push(`/users/${this.props.currentUser.id}`);
     });
   }
 
   handleCancel(e) {
     e.preventDefault();
-    this.props.history.push("/");
+    this.props.history.push(`/users/${this.props.currentUser.id}`);
   }
 
   handleUpdate(field) {

@@ -11,6 +11,11 @@ class Api::PostsController < ApplicationController
     render :show
   end
 
+  def profile_posts
+      @posts = Post.where(user_id: params[:id])
+      render :index
+  end
+
   def create
     @post = Post.new(post_params)
     @post.user_id = current_user.id
