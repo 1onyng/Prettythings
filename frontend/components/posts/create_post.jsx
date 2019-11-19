@@ -7,7 +7,7 @@ class CreatePost extends React.Component {
       title: "",
       photo: "",
       photoFile: null,
-      photoUrl: null
+      photoUrl: "https://pretty-things-seeds.s3-us-west-1.amazonaws.com/upload-photo.jpg"
     };
     this.handleFile = this.handleFile.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -66,41 +66,54 @@ class CreatePost extends React.Component {
 
   render() {
     return (
-      <form className="new-post-form" onSubmit={this.handleSubmit}>      
-        <img src={this.state.photoUrl} />
-      
-        <label>
-          <input
-            className="photo-input-field"
-            id="file-selector"
-            type="file"
-            onChange={this.handleFile}
-          />
-        </label>
-
-        <label>
-          <input
-            className="title-input-field"
-            onChange={this.handleUpdate("title")}
-            type="text"
-            placeholder="Give your post a title"
-            value={this.state.title}
-          ></input>
-        </label>
-
-
-          <button
-            className="post-button-cancel"
-            onClick={this.handleCancel}
-          >
-            Cancel
-          </button>
-
-          <input
-            className="post-button-upload"
-            type="submit"
-            value="Upload Post"
-          />
+      <form className="new-post-form" onSubmit={this.handleSubmit}>
+        <div className="upload-form-div">
+          <div className="preview-div">
+            <div className="preview-outline">
+              <img className="scanner-icon" src={this.state.photoUrl} />
+            </div>
+          </div>
+        </div>
+        <div className="post-form-right">
+          <div className="post-right-top">
+          </div>
+          <div className="post-right-mid">
+            <label className="upload-photo">
+              <div>
+                <input
+                  className="photo-input-field"
+                  id="file-selector"
+                  type="file"
+                  onChange={this.handleFile}
+                />
+              </div>
+            </label>
+            <label className="upload-content">
+              <input
+                className="title-input-field"
+                onChange={this.handleUpdate("title")}
+                type="text"
+                placeholder="Write a caption..."
+                value={this.state.title}
+              ></input>
+            </label>
+          </div>
+          <div className="post-right-bottom">
+            <div className="post-form-buttons">
+              <button
+                className="post-button-cancel"
+                onClick={this.handleCancel}
+              >
+                Cancel
+              </button>
+              <input
+                className="post-button-upload"
+                type="submit"
+                value="Upload Post"
+              />
+            </div>
+          </div>
+        </div>
       </form>
     );
   }
