@@ -18,7 +18,7 @@
 .modal-errors {
     position: absolute;
     background-color: rgb(255, 209, 209);
-    border: 1px solid black;
+    border: 1px solid red;
     padding: 10px;
     font-family: 'Roboto', sans-serif;
     border-radius: 12px;
@@ -29,12 +29,13 @@
 .comment-error-modal {
     width: 250px;
     height: 75px;
-    background-color: white;
+    background-color:  rgb(255, 209, 209);
+    color: red;
     font-family: 'Roboto', sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 5px;
     font-size: 18px;
-    border: 1px solid black;
+    border: 1px solid red;
 }
