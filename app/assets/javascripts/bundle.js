@@ -1932,6 +1932,7 @@ function (_React$Component) {
     };
     _this.handleDelete = _this.handleDelete.bind(_assertThisInitialized(_this));
     _this.handleComment = _this.handleComment.bind(_assertThisInitialized(_this));
+    _this.closeModal = _this.closeModal.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -1954,13 +1955,19 @@ function (_React$Component) {
   }, {
     key: "handleDelete",
     value: function handleDelete(e) {
+      var _this3 = this;
+
       e.preventDefault();
-      this.props.deletePost(this.props.post.id);
+      window.confirm("Delete post?") && this.props.deletePost(this.props.post.id).then(function () {
+        _this3.props.closeModal();
+      }).then(function () {
+        _this3.props.history.push("/");
+      });
     }
   }, {
     key: "handleComment",
     value: function handleComment(e) {
-      var _this3 = this;
+      var _this4 = this;
 
       e.preventDefault();
       var comment = {
@@ -1968,9 +1975,9 @@ function (_React$Component) {
         post_id: this.props.post.id
       };
       this.props.createComment(comment).then(function () {
-        _this3.props.fetchPost(_this3.props.post.id);
+        _this4.props.fetchPost(_this4.props.post.id);
       }).then(function () {
-        _this3.props.clearErrors();
+        _this4.props.clearErrors();
       });
       this.setState({
         body: ""
@@ -1992,7 +1999,7 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this4 = this;
+      var _this5 = this;
 
       if (!this.props.post) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Loading...");
@@ -2007,13 +2014,13 @@ function (_React$Component) {
           to: "/users/".concat(comment.user_id)
         }, comment.author), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "comment-body"
-        }, "\xA0", comment.body), comment.user_id === _this4.props.user.id ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        }, "\xA0", comment.body), comment.user_id === _this5.props.user.id ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           className: "delete-comment-button",
           onClick: function onClick() {
-            return _this4.props.deleteComment(comment.id).then(function () {
-              _this4.props.fetchPost(_this4.props.post.id);
+            return _this5.props.deleteComment(comment.id).then(function () {
+              _this5.props.fetchPost(_this5.props.post.id);
             }).then(function () {
-              return _this4.props.clearErrors();
+              return _this5.props.clearErrors();
             });
           }
         }, "X") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null));

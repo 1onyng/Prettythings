@@ -11,6 +11,7 @@ class PostShow extends React.Component {
 
     this.handleDelete = this.handleDelete.bind(this);
     this.handleComment = this.handleComment.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
   componentDidMount() {
@@ -24,7 +25,10 @@ class PostShow extends React.Component {
   
   handleDelete(e) {
     e.preventDefault();
-    this.props.deletePost(this.props.post.id)
+    window.confirm("Delete post?") &&
+      this.props.deletePost(this.props.post.id)
+        .then(() => { this.props.closeModal() })
+        .then(() => { this.props.history.push("/") })
   }
 
   handleComment(e) {
