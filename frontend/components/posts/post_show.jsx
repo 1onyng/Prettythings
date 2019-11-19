@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import LikesContainer from "../like/like_container";
 
-
 class PostShow extends React.Component {
   constructor(props) {
     super(props);
@@ -11,18 +10,24 @@ class PostShow extends React.Component {
 
     this.handleDelete = this.handleDelete.bind(this);
     this.handleComment = this.handleComment.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchPost(this.props.post.id);
-    this.props.fetchPostComments(this.props.post.id)
-    this.props.clearErrors()
+    this.props.fetchPostComments(this.props.post.id);
+    this.props.clearErrors();
   }
   update(field) {
     return e => this.setState({ [field]: e.target.value });
   }
-  
+
+  closeModal(e) {
+    e.preventDefault();
+    this.props.closeModal();
+  }
+
   handleDelete(e) {
     e.preventDefault();
     window.confirm("Delete post?") &&
@@ -101,7 +106,7 @@ class PostShow extends React.Component {
               </div>
               <div className="post-author-delete">
                 {user_id === this.props.user.id ||
-                  this.props.currentUser.username === "pretty_things_admin" ?(
+                  this.props.user.username === "pretty_things_admin" ?(
                     <button 
                       className="delete-button" 
                       onClick={this.handleDelete}>
