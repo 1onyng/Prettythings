@@ -1,7 +1,7 @@
 class Api::UsersController < ApplicationController
   def create
     @user = User.new(user_params)
-    @user.profile_photo.attach(io: open('https://pretty-things-seeds.s3-us-west-1.amazonaws.com/profile_photo_default.jpg')), filename: "profile_photo_default.jpg")
+    @user.profile_photo.attach(io: open('https://pretty-things-seeds.s3-us-west-1.amazonaws.com/profile_photo_default.jpg'), filename: "profile_photo_default.jpg")
  
     if @user.save
       log_in(@user)
