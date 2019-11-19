@@ -42,3 +42,8 @@ export const createPost = post => dispatch => {
   return PostAPIUtil.createPost(post)
     .then(post => dispatch(receivePost(post)));
 };
+
+export const fetchProfilePosts = userId => dispatch => {
+  return PostAPIUtil.fetchProfilePosts(userId)
+    .then(posts => dispatch(receiveAllPosts(posts)));
+};

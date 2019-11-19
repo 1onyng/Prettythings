@@ -1,12 +1,27 @@
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
+import { RECEIVE_FOLLOW, REMOVE_FOLLOW } from "../actions/follows_actions";
+import merge from "lodash/merge";
 
 const usersReducer = (state = {}, action) => {
   Object.freeze(state);
+  let newState = merge({}, state);
+
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
-      return Object.assign({}, state, { [action.user.id]: action.user })
+      return merge({}, state, { [action.user.id]: action.user })
+    case RECEIVE_FOLLOW:
+      newState[action.follow.followed_user_id].followerIds.push(action.follow.user_id);
+      newState[action.follow.user_id].followingIds.push(action.follow.followed_user_id);
+      return newState;
+    case REMOVE_FOLLOW:
+      newState[action.follow.followed_user_id].followerIds = newState[action.follow.followed_user_id].followerIds
+        .filter(followerId => followerId !== action.follow.user_id);
+      newState[action.follow.user_id].followingIds = newState[action.follow.user_id].followingIds
+        .filter(followingId => followingId !== action.follow.followed_user_id);
+      return newState;
     default:
       return state;
+    
   }
 }
 

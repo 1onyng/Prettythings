@@ -35,28 +35,18 @@ class NavBar extends React.Component {
           </div>
           {/* <SearchBarContainer /> */}
           <div className="nav-right">
-            {/* <Link className="nav-icon" to={`/users/my-profile`}>
-              <img
-                className="box-icon"
-                src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/fotobox_icon.png"
-              />
-            </Link> */}
-            {/* <Link className="nav-icon" to={`/newpost`}>
+            <Link className="nav-icon" to={`/explore`}>
               <img
                 className="post-form-icon"
-                src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/rolleiflex.jpg"
+                src="https://pretty-things-seeds.s3-us-west-1.amazonaws.com/discover_icon.jpg"
               />
-            </Link> */}
-            <button
-              className="nav-sign-out"
-              onClick={this.handleNewPostForm}>
-              Add Photo
-            </button>
-            <button 
-              className="nav-sign-out" 
-              onClick={this.Logout}>
-              Log Out
-            </button>
+            </Link>
+            <Link className="nav-icon" to={`/users/my-profile`}>
+              <img
+                className="box-icon"
+                src="https://pretty-things-seeds.s3-us-west-1.amazonaws.com/my_profile_icon.png"
+              />
+            </Link>
           </div>
         </section>
       </div>

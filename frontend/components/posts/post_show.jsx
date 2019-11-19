@@ -33,7 +33,7 @@ class PostShow extends React.Component {
     window.confirm("Delete post?") &&
       this.props.deletePost(this.props.post.id)
         .then(() => { this.props.closeModal() })
-        .then(() => { this.props.history.push("/") })
+        .then(() => { this.props.history.push("/my-profile") })
   }
 
   handleComment(e) {
