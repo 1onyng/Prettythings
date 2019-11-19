@@ -26,7 +26,9 @@ Post.destroy_all
 User.destroy_all
 
 demo_user = User.create!(username: "demo_user", password: "hunter02")
-demo_user.profile_photo.attach(io: File.open("#{Rails.root}/app/assets/images/demo_user_avatar.jpeg"), filename: "demo_user_avatar.jpeg")
+file = open('https://pretty-things-seeds.s3-us-west-1.amazonaws.com/demo_user_avatar.jpeg')
+demo_user.profile_photo.attach(io: file, filename: "demo_user_avatar.jpeg")
+demo_user.save!
 # until photos.empty?
 #   photo = photos.shift
 #   post = Post.new(title: titles.shift, user_id: demo_user.id)
