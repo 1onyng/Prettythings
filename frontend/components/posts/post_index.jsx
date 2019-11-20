@@ -18,7 +18,7 @@ class PostIndex extends React.Component {
           <div className="feed-left"></div>
           <div className="feed-mid">
             <ul className="feed-images">
-              {posts.map((post, i) => {
+              {posts.reverse().map((post, i) => {
                 return (
                   <div key={i}>
                     <PostIndexItemContainer

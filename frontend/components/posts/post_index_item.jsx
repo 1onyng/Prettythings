@@ -59,23 +59,18 @@ class PostIndexItem extends React.Component {
             <div className="title-span">{post.title}</div>
           </div>
           <div className="feed-image-bottom">
-            <div className="feed-image-bottom-buttons">
+            {/* <div className="feed-image-bottom-buttons">
               <i
                 className="fas fa-heart show-icon"
                 onClick={this.handleComment}
               ></i>
-            </div>
+            </div> */}
             <div className="feed-image-bottom-likes">
               <LikeContainer post={post} likers={post.likers} />
               <div className="likes">
                 {post.likers.length === 1
                   ? `1 like`
                   : `${post.likers.length} likes`}
-              </div>
-              <div className="comments">
-                {commentPosts === 1
-                  ? `1 comment`
-                  : `${commentPosts.length} comments`}
               </div>
             </div>
             <div className="feed-image-bottom-bio"></div>
@@ -93,7 +88,7 @@ class PostIndexItem extends React.Component {
                   onClick={this.handleComment}
                 >
                   Post
-                  </button>
+                </button>
               </form>
             </div>
           </div>

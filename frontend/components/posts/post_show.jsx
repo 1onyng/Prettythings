@@ -110,7 +110,7 @@ class PostShow extends React.Component {
                     <button 
                       className="delete-button" 
                       onClick={this.handleDelete}>
-                      Delete <i className="fas fa-trash-alt"></i>
+                    <i className="fas fa-trash-alt"></i>
                     </button>
                   ) : (
                     <div></div>
@@ -141,7 +141,7 @@ class PostShow extends React.Component {
                 <div className="show-buttons">
                   <LikesContainer post={this.props.post} likers={likers} />
                   <i
-                    className="fas fa-paw show-icon"
+                    class="far fa-comment-alt"
                     onClick={this.handleComment}
                   ></i>
                 </div>

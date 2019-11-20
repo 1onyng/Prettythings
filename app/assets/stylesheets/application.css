@@ -19,9 +19,9 @@
 .logout-button {
   bottom: 20px;
 }
-.fotobox-logo {
-  font-family: "Satisfy", cursive;
-  font-weight: 80;
+.login-logo {
+  font-family: 'Dancing Script', cursive;
+  font-size: 40px;
   margin-bottom: 20px;
 }
 
@@ -119,3 +119,5 @@ h1 {
   padding-right: 7px;
   border-radius: 50%;
 }
+
+

@@ -748,9 +748,6 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      // const errors = this.props.errors.map((error, i) => {
-      //   return <li key={i}>{error}</li>
-      // });
       var link;
       var path;
       var instruct;
@@ -787,7 +784,7 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: this.handleSubmit
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-        className: "logo"
+        className: "login-logo"
       }, "Pretty Things"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "login-form"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
@@ -1234,13 +1231,13 @@ function (_React$Component) {
         to: "/explore"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "post-form-icon",
-        src: "https://pretty-things-seeds.s3-us-west-1.amazonaws.com/discover_icon.jpg"
+        src: "https://pretty-things-seeds.s3-us-west-1.amazonaws.com/explore.jpg"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         className: "nav-icon",
         to: "/users/my-profile"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        className: "box-icon",
-        src: "https://pretty-things-seeds.s3-us-west-1.amazonaws.com/my_profile_icon.png"
+        className: "my-profile-icon",
+        src: "https://pretty-things-seeds.s3-us-west-1.amazonaws.com/photograph-icon-24.jpg"
       })))));
     }
   }]);
@@ -1459,14 +1456,16 @@ function (_React$Component) {
         contentType: false,
         processData: false
       }).then(function () {
-        _this3.props.history.push("/users/".concat(_this3.props.currentUser.id));
+        // this.props.history.push(`/users/${this.props.currentUser.id}`);
+        _this3.props.history.push("/users/my-profile");
       });
     }
   }, {
     key: "handleCancel",
     value: function handleCancel(e) {
-      e.preventDefault();
-      this.props.history.push("/users/".concat(this.props.currentUser.id));
+      e.preventDefault(); // this.props.history.push(`/users/${this.props.currentUser.id}`);
+
+      this.props.history.push("/users/my-profile");
     }
   }, {
     key: "handleUpdate",
@@ -1644,7 +1643,7 @@ function (_React$Component) {
         className: "feed-mid"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "feed-images"
-      }, posts.map(function (post, i) {
+      }, posts.reverse().map(function (post, i) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           key: i
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_post_index_item_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -1838,20 +1837,13 @@ function (_React$Component) {
       }, post.title)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "feed-image-bottom"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "feed-image-bottom-buttons"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-heart show-icon",
-        onClick: this.handleComment
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "feed-image-bottom-likes"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_like_like_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
         post: post,
         likers: post.likers
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "likes"
-      }, post.likers.length === 1 ? "1 like" : "".concat(post.likers.length, " likes")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "comments"
-      }, commentPosts === 1 ? "1 comment" : "".concat(commentPosts.length, " comments"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, post.likers.length === 1 ? "1 like" : "".concat(post.likers.length, " likes"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "feed-image-bottom-bio"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "feed-image-bottom-comments"
@@ -2129,7 +2121,7 @@ function (_React$Component) {
       }, user_id === this.props.user.id || this.props.user.username === "pretty_things_admin" ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "delete-button",
         onClick: this.handleDelete
-      }, "Delete ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fas fa-trash-alt"
       })) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "post-comments"
@@ -2149,7 +2141,7 @@ function (_React$Component) {
         post: this.props.post,
         likers: likers
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-paw show-icon",
+        "class": "far fa-comment-alt",
         onClick: this.handleComment
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "show-likecount"
@@ -2248,7 +2240,6 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _nav_bar_nav_bar_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../nav_bar/nav_bar_container */ "./frontend/components/nav_bar/nav_bar_container.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2266,7 +2257,6 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
 
 
 
@@ -2360,7 +2350,7 @@ function (_React$Component) {
         }, "\u2665"), post.likers ? post.likers.length : 0, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
           className: "fas fa-comment",
           "aria-hidden": "true"
-        }, "\uD83D\uDCAC"), post.commentIds ? post.commentIds.length : 0)))));
+        }), post.commentIds ? post.commentIds.length : 0)))));
       });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "profile-wrap"
@@ -2394,9 +2384,9 @@ function (_React$Component) {
         className: "profile-top-down"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.props.userPosts.length, " posts"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: ""
-      }, followerIds.length, " Followers"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      }, followerIds.length, " followers"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: ""
-      }, followingIds.length, " Following")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, followingIds.length, " following")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "profile-photo-index-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "profile-photo-index"

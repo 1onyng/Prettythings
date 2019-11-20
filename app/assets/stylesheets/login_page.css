@@ -133,6 +133,5 @@
 .login-errors-ul {
   height: 40px;
   width: 100%;
-  text-align: left;
-  /* margin-left: 50px; */
+  text-align: center;
 }
