@@ -44,10 +44,6 @@ export default class SessionForm extends React.Component {
   }
 
   render() {
-    // const errors = this.props.errors.map((error, i) => {
-    //   return <li key={i}>{error}</li>
-    // });
-
     let link; 
     let path;
     let instruct;
@@ -82,7 +78,7 @@ export default class SessionForm extends React.Component {
         <div className="login-right">
           <div className="login-form-container">
             <form onSubmit={this.handleSubmit}>
-              <h1 className="logo">Pretty Things</h1>
+              <h1 className="login-logo">Pretty Things</h1>
               <div className="login-form">
                 <p className="greet">{greet}</p>           
                 <label>

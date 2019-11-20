@@ -15,5 +15,7 @@ Rails.application.routes.draw do
     resources :likes, only: [:create, :destroy, :show]
     resources :comments, only: [:create, :destroy, :show]
     resource :session, only: [:create, :destroy]
+
+    get 'profile/posts/:id', :to => 'posts#profile_posts'
   end
 end

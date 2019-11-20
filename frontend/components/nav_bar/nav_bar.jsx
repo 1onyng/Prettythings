@@ -38,13 +38,13 @@ class NavBar extends React.Component {
             <Link className="nav-icon" to={`/explore`}>
               <img
                 className="post-form-icon"
-                src="https://pretty-things-seeds.s3-us-west-1.amazonaws.com/discover_icon.jpg"
+                src="https://pretty-things-seeds.s3-us-west-1.amazonaws.com/explore.jpg"
               />
             </Link>
             <Link className="nav-icon" to={`/users/my-profile`}>
               <img
-                className="box-icon"
-                src="https://pretty-things-seeds.s3-us-west-1.amazonaws.com/my_profile_icon.png"
+                className="my-profile-icon"
+                src="https://pretty-things-seeds.s3-us-west-1.amazonaws.com/photograph-icon-24.jpg"
               />
             </Link>
           </div>

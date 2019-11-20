@@ -1,5 +1,4 @@
 import React from "react";
-import NavBarContainer from "../nav_bar/nav_bar_container";
 
 class Profile extends React.Component {
   constructor(props) {
@@ -59,10 +58,9 @@ class Profile extends React.Component {
               <img className="user-page-photos" src={post.photoUrl} />
               <div className="image-overlay">
                 <p className="image-overlay-text">
-                  <span className="overlay-heart">&#9829;</span>
+                  <span className="overlay-heart">&#9829;</span>       
                   {post.likers ? post.likers.length : 0}
                   <i className="fas fa-comment" aria-hidden="true">
-                    &#x1f4ac;
                   </i>
                   {post.commentIds ? post.commentIds.length : 0}
                 </p>
@@ -74,7 +72,6 @@ class Profile extends React.Component {
     });
     return (
       <div>
-        {/* <NavBarContainer /> */}
         <div className="profile-wrap">
           <div className="profile-left"></div>
           <div className="profile-container">
@@ -108,8 +105,8 @@ class Profile extends React.Component {
                 </div>
                 <div className="profile-top-down">
                   <span>{this.props.userPosts.length} posts</span>
-                  <span className="">{followerIds.length} Followers</span>
-                  <span className="">{followingIds.length} Following</span>
+                  <span className="">{followerIds.length} followers</span>
+                  <span className="">{followingIds.length} following</span>
                 </div>
               </div>
             </div>
