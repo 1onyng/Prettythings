@@ -11,7 +11,7 @@ const mapStateToProps = (state, ownProps) => {
   let profileUser = state.entities.users[state.session.id];
   let currentUser = state.entities.users[state.session.id];
   let userPosts = null;
-  let profile_picture = profileUser.photo_url;
+  let profile_photo = profileUser.photo_url;
 
   if (profileUser) {
     userPosts = Object.values(state.entities.posts)
@@ -19,7 +19,7 @@ const mapStateToProps = (state, ownProps) => {
   }
 
   return {
-    profile_picture: profile_picture,
+    profile_photo: profile_photo,
     userPosts: userPosts,
     profileId: profileId,
     profileUser: profileUser,

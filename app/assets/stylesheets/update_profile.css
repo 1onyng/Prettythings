@@ -1,13 +1,14 @@
 .update-profile-text {
   font-size: 16px;
   padding-bottom: 5px;
-  /* font-family: "Satisfy", cursive; */
+  margin-left: 15px;
 }
 .post-form-container {
   display: flex;
-  /* flex-grow: inherit; */
   flex-direction: grid;
+  justify-content: center;
   font-family: "Roboto", sans-serif;
+  align-items: center;
 }
 
 .post-button-upload {
@@ -42,11 +43,10 @@
 }
 .profile-pic-main {
   height: 50%;
-
   object-fit: cover;
 }
 .update-form-right {
-  height: 400px;
+  height: 250px;
   width: 300px;
   display: flex;
   justify-content: space-around;
@@ -54,7 +54,7 @@
   align-items: center;
   border: 1px solid lightgray;
   border-radius: 4px;
-  margin-left: 350px;
+  margin-left: 20px;
   margin-top: 100px;
   margin-bottom: 300px;
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.0975);
@@ -63,15 +63,14 @@
 
 .update-right-top,
 .update-left-top {
-  border-bottom: 1px solid grey;
+  border: 1px solid lightgray;
   display: flex;
   justify-content: space-around;
-  /* flex-direction: column; */
   align-items: center;
-  height: 10%;
+  height: 35px;
   width: 100%;
-  color: white;
-  background-color: rgb(114, 113, 113);
+  color: black;
+  background-color:transparent;
   border-radius: 4px 4px 0px 0px;
 }
 
@@ -90,30 +89,10 @@
   width: 100%;
   display: flex;
   justify-content: center;
-}
-
-.update-bio-text {
-  height: 75px;
-  max-height: 100px;
-  max-width: 250px;
-  width: 250px;
-  text-align: left;
-  width: 250px;
-  height: 40px;
-  background-color: #fafafa;
-  /* padding-left: 5px; */
-  text-overflow: ellipsis;
-  font-size: 14px;
-  /* margin: 3px; */
-  border-radius: 3px;
-  border: 1px solid #efefef;
-  box-sizing: border-box;
-  /* margin: 25px; */
+  margin-bottom: 15px;
 }
 
 .update-text-input {
-  /* width: 175px; */
-  /* height: 15px;   */
   text-align: left;
   width: 250px;
   height: 40px;
@@ -125,10 +104,14 @@
   border-radius: 3px;
   border: 1px solid #efefef;
   box-sizing: border-box;
+  margin-left: 15px;
 }
 
 
 .update-preview {
   height: 450px;
 }
-/* //////// */
+
+.photo-input-field {
+  margin-left: 15px;
+}
