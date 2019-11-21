@@ -7,7 +7,7 @@
 .profile-top {
   display: flex;
   min-width: 850px;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   margin-bottom: 50px;
   position: relative;
@@ -44,6 +44,7 @@
 .profile-top-buttons {
   display: flex;
   justify-content: space-between;
+  margin-left: 50px;
 }
 
 .profile-container {
@@ -71,6 +72,25 @@
   cursor: pointer;
 }
 
+.follow-button {
+  background-color: #3897f0;
+  border: 1px solid #dbdbdb;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  margin-right: 10px;
+  padding: 5px 5px;
+  border-radius: 5px;
+  width: 80px;
+  height: 30px;
+  align-content: center;
+  outline: none;
+}
+
+.follow-button:hover {
+  cursor: pointer;
+}
+
 .profile-display-pic {
   border: 1px solid #dbdbdb;
   background-color: darkgrey;
@@ -81,23 +101,20 @@
 
 .profile-top-up {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
-}
-
-.profile-top-down {
-  width: 400px;
-  margin-left: 40px; 
 }
 
 .profile-top-up, .profile-top-down {
   display: flex;
-  justify-content: space-evenly;
+  
+  justify-content: flex-start;
+  justify-content: space-between;
+  width: 400px;
 }
 
-
 .profile-top-right {
-  width: 700px;
+  margin-left: 70px;
 }
 
 .cursor:hover {
@@ -112,10 +129,6 @@
   margin: 20px;
 }
 
-/* .user-page-photos:hover {
-  filter: brightness(0.1);
-} */
-
 .profile-left, .profile-right {
   width: 10%
 }
@@ -125,7 +138,6 @@
   justify-content: center;
   align-items: center;
 }
-
 
 .image-container {
   position: relative;

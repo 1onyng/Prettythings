@@ -556,12 +556,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _forms_signup_form_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./forms/signup_form_container */ "./frontend/components/forms/signup_form_container.js");
 /* harmony import */ var _posts_post_index_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./posts/post_index_container */ "./frontend/components/posts/post_index_container.js");
 /* harmony import */ var _posts_create_post_container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./posts/create_post_container */ "./frontend/components/posts/create_post_container.js");
-/* harmony import */ var _posts_post_show_container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./posts/post_show_container */ "./frontend/components/posts/post_show_container.js");
-/* harmony import */ var _nav_bar_nav_bar_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./nav_bar/nav_bar_container */ "./frontend/components/nav_bar/nav_bar_container.js");
-/* harmony import */ var _profile_profile_container__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./profile/profile_container */ "./frontend/components/profile/profile_container.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var _util_route_util__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../util/route_util */ "./frontend/util/route_util.jsx");
-/* harmony import */ var _modal__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modal */ "./frontend/components/modal.jsx");
+/* harmony import */ var _nav_bar_nav_bar_container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./nav_bar/nav_bar_container */ "./frontend/components/nav_bar/nav_bar_container.js");
+/* harmony import */ var _profile_profile_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./profile/profile_container */ "./frontend/components/profile/profile_container.js");
+/* harmony import */ var _profile_user_show_container__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./profile/user_show_container */ "./frontend/components/profile/user_show_container.js");
+/* harmony import */ var _profile_user_update_form_container__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./profile/user_update_form_container */ "./frontend/components/profile/user_update_form_container.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _util_route_util__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../util/route_util */ "./frontend/util/route_util.jsx");
+/* harmony import */ var _modal__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modal */ "./frontend/components/modal.jsx");
+
 
 
 
@@ -578,25 +580,33 @@ __webpack_require__.r(__webpack_exports__);
 var App = function App() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "page"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_modal__WEBPACK_IMPORTED_MODULE_11__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_10__["ProtectedRoute"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_modal__WEBPACK_IMPORTED_MODULE_12__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_11__["ProtectedRoute"], {
     path: "/",
-    component: _nav_bar_nav_bar_container__WEBPACK_IMPORTED_MODULE_7__["default"]
+    component: _nav_bar_nav_bar_container__WEBPACK_IMPORTED_MODULE_6__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
     className: "headerBar"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_10__["AuthRoute"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_10__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_11__["AuthRoute"], {
     path: "/login",
     component: _forms_login_form_container__WEBPACK_IMPORTED_MODULE_2__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_10__["AuthRoute"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_11__["AuthRoute"], {
     path: "/signup",
     component: _forms_signup_form_container__WEBPACK_IMPORTED_MODULE_3__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_10__["ProtectedRoute"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_11__["ProtectedRoute"], {
     exact: true,
     path: "/newpost",
     component: _posts_create_post_container__WEBPACK_IMPORTED_MODULE_5__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_10__["ProtectedRoute"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_11__["ProtectedRoute"], {
     path: "/users/my-profile",
-    component: _profile_profile_container__WEBPACK_IMPORTED_MODULE_8__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_10__["ProtectedRoute"], {
+    component: _profile_profile_container__WEBPACK_IMPORTED_MODULE_7__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_11__["ProtectedRoute"], {
+    exact: true,
+    path: "/users/:userId",
+    component: _profile_user_show_container__WEBPACK_IMPORTED_MODULE_8__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_11__["ProtectedRoute"], {
+    exact: true,
+    path: "/edit-profile",
+    component: _profile_user_update_form_container__WEBPACK_IMPORTED_MODULE_9__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_11__["ProtectedRoute"], {
     exact: true,
     path: "/",
     component: _posts_post_index_container__WEBPACK_IMPORTED_MODULE_4__["default"]
@@ -1456,15 +1466,13 @@ function (_React$Component) {
         contentType: false,
         processData: false
       }).then(function () {
-        // this.props.history.push(`/users/${this.props.currentUser.id}`);
         _this3.props.history.push("/users/my-profile");
       });
     }
   }, {
     key: "handleCancel",
     value: function handleCancel(e) {
-      e.preventDefault(); // this.props.history.push(`/users/${this.props.currentUser.id}`);
-
+      e.preventDefault();
       this.props.history.push("/users/my-profile");
     }
   }, {
@@ -2324,7 +2332,7 @@ function (_React$Component) {
 
       var _this$props$profileUs = this.props.profileUser,
           username = _this$props$profileUs.username,
-          photoUrl = _this$props$profileUs.photoUrl,
+          photo_url = _this$props$profileUs.photo_url,
           followerIds = _this$props$profileUs.followerIds,
           followingIds = _this$props$profileUs.followingIds;
       var userPhotos = this.props.userPosts.reverse().map(function (post) {
@@ -2345,9 +2353,9 @@ function (_React$Component) {
           className: "image-overlay"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           className: "image-overlay-text"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-          className: "overlay-heart"
-        }, "\u2665"), post.likers ? post.likers.length : 0, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+          className: "fas fa-heart"
+        }), post.likers ? post.likers.length : 0, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
           className: "fas fa-comment",
           "aria-hidden": "true"
         }), post.commentIds ? post.commentIds.length : 0)))));
@@ -2364,7 +2372,7 @@ function (_React$Component) {
         className: "profile-display-pic"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "profile-display-pic",
-        src: this.props.profile_picture
+        src: photo_url
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "profile-top-right"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2432,7 +2440,7 @@ var mapStateToProps = function mapStateToProps(state, ownProps) {
   var profileUser = state.entities.users[state.session.id];
   var currentUser = state.entities.users[state.session.id];
   var userPosts = null;
-  var profile_picture = profileUser.photo_url;
+  var profile_photo = profileUser.photo_url;
 
   if (profileUser) {
     userPosts = Object.values(state.entities.posts).filter(function (post) {
@@ -2441,7 +2449,7 @@ var mapStateToProps = function mapStateToProps(state, ownProps) {
   }
 
   return {
-    profile_picture: profile_picture,
+    profile_photo: profile_photo,
     userPosts: userPosts,
     profileId: profileId,
     profileUser: profileUser,
@@ -2479,6 +2487,517 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, mapDispatchToProps)(_profile_profile__WEBPACK_IMPORTED_MODULE_0__["default"]));
+
+/***/ }),
+
+/***/ "./frontend/components/profile/user_show.jsx":
+/*!***************************************************!*\
+  !*** ./frontend/components/profile/user_show.jsx ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+var UserShow =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(UserShow, _React$Component);
+
+  function UserShow(props) {
+    var _this;
+
+    _classCallCheck(this, UserShow);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(UserShow).call(this, props));
+    _this.userPosts = _this.props.userPosts;
+    _this.currentUser = _this.props.currentUser;
+    _this.logout = _this.props.logout;
+    _this.handleNewPostForm = _this.handleNewPostForm.bind(_assertThisInitialized(_this));
+    _this.handleEditUser = _this.handleEditUser.bind(_assertThisInitialized(_this));
+    _this.handleFollow = _this.handleFollow.bind(_assertThisInitialized(_this));
+    _this.handleUnfollow = _this.handleUnfollow.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(UserShow, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.fetchProfilePosts(this.props.match.params.userId);
+      this.props.fetchUser(this.props.match.params.userId);
+      this.props.closeModal();
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps) {
+      if (prevProps.location.pathname !== this.props.location.pathname) {
+        this.props.fetchProfilePosts(this.props.match.params.userId);
+        this.props.fetchUser(this.props.match.params.userId);
+        this.props.closeModal();
+      }
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      window.removeEventListener("scroll", this.myScrollFunc);
+    }
+  }, {
+    key: "handleFollow",
+    value: function handleFollow(e) {
+      var _this2 = this;
+
+      e.preventDefault();
+      this.props.createFollow({
+        followed_user_id: this.props.profileUser.id
+      }).then(function () {
+        return _this2.props.fetchUser(_this2.props.profileUser.id);
+      });
+    }
+  }, {
+    key: "handleUnfollow",
+    value: function handleUnfollow(e) {
+      var _this3 = this;
+
+      e.preventDefault();
+      this.props.deleteFollow(this.props.profileUser.id).then(function () {
+        _this3.props.fetchUser(_this3.props.profileUser.id);
+      });
+    }
+  }, {
+    key: "handleNewPostForm",
+    value: function handleNewPostForm(e) {
+      e.preventDefault();
+      this.props.history.push("/newpost");
+    }
+  }, {
+    key: "handleEditUser",
+    value: function handleEditUser(e) {
+      e.preventDefault();
+      this.props.history.push("/edit-profile");
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this4 = this;
+
+      if (!this.props.profileUser) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Loading...");
+      }
+
+      var _this$props$profileUs = this.props.profileUser,
+          username = _this$props$profileUs.username,
+          photo_url = _this$props$profileUs.photo_url,
+          id = _this$props$profileUs.id,
+          followerIds = _this$props$profileUs.followerIds,
+          followingIds = _this$props$profileUs.followingIds;
+      var userPhotos = this.props.userPosts.reverse().map(function (post) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          key: post.id
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "image-container"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          onClick: function onClick() {
+            return _this4.props.openModal({
+              postId: post.id
+            });
+          }
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          className: "user-page-photos",
+          src: post.photoUrl
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "image-overlay"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          className: "image-overlay-text"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+          className: "fas fa-heart"
+        }), post.likers ? post.likers.length : 0, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+          className: "fas fa-comment",
+          "aria-hidden": "true"
+        }), post.commentIds ? post.commentIds.length : 0)))));
+      });
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-wrap"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-left"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-top"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-display-pic"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "profile-display-pic",
+        src: photo_url
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-top-right"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-top-up"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, username), id === this.props.currentUser.id ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-top-buttons"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "profile-button",
+        onClick: this.logout
+      }, "Log Out"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "profile-button",
+        onClick: this.handleEditUser
+      }, "Edit Profile"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "profile-button",
+        onClick: this.handleNewPostForm
+      }, "Add Photo")) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-top-buttons"
+      }, this.props.profileUser.followerIds.includes(this.props.currentUser.id) ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "follow-button",
+        onClick: this.handleUnfollow
+      }, "Unfollow") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "follow-button",
+        onClick: this.handleFollow
+      }, "Follow"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-top-down"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.props.userPosts.length, " posts"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: ""
+      }, followerIds.length, " followers"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: ""
+      }, followingIds.length, " following")), this.props.currentUser.username === "fotoboxAdmin" && this.props.profileUser.username !== "fotoboxAdmin" ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "profile-button remove-user",
+        onClick: this.handleDeleteUser
+      }, "Remove User") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-photo-index-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "profile-photo-index"
+      }, userPhotos))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-right"
+      })));
+    }
+  }]);
+
+  return UserShow;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (UserShow);
+
+/***/ }),
+
+/***/ "./frontend/components/profile/user_show_container.js":
+/*!************************************************************!*\
+  !*** ./frontend/components/profile/user_show_container.js ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _actions_user_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/user_actions */ "./frontend/actions/user_actions.js");
+/* harmony import */ var _actions_post_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/post_actions */ "./frontend/actions/post_actions.js");
+/* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
+/* harmony import */ var _actions_follows_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/follows_actions */ "./frontend/actions/follows_actions.js");
+/* harmony import */ var _user_show__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./user_show */ "./frontend/components/profile/user_show.jsx");
+/* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
+
+
+
+
+
+
+
+
+var mapStateToProps = function mapStateToProps(state, ownProps) {
+  var profileId = ownProps.match.params.userId;
+  var profileUser = state.entities.users[profileId];
+  var userPosts = null;
+  var followerIds = null;
+  var followStatus = false;
+  var currentUser = state.entities.users[state.session.id];
+
+  if (profileUser) {
+    userPosts = Object.values(state.entities.posts).filter(function (post) {
+      return post.user_id === profileUser.id;
+    }), followerIds = profileUser.followerIds, followStatus = followerIds.includes(currentUser.id);
+  }
+
+  return {
+    currentUser: currentUser,
+    userPosts: userPosts,
+    profileUser: profileUser,
+    followerIds: followerIds,
+    followStatus: followStatus
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    logout: function logout() {
+      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_3__["logout"])());
+    },
+    fetchProfilePosts: function fetchProfilePosts(id) {
+      return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_2__["fetchProfilePosts"])(id));
+    },
+    fetchUser: function fetchUser(userId) {
+      return dispatch(Object(_actions_user_actions__WEBPACK_IMPORTED_MODULE_1__["fetchUser"])(userId));
+    },
+    deleteUser: function deleteUser(id) {
+      return dispatch(Object(_actions_user_actions__WEBPACK_IMPORTED_MODULE_1__["deleteUser"])(id));
+    },
+    createFollow: function createFollow(follow) {
+      return dispatch(Object(_actions_follows_actions__WEBPACK_IMPORTED_MODULE_4__["createFollow"])(follow));
+    },
+    deleteFollow: function deleteFollow(follow) {
+      return dispatch(Object(_actions_follows_actions__WEBPACK_IMPORTED_MODULE_4__["deleteFollow"])(follow));
+    },
+    openModal: function openModal(data) {
+      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_6__["openModal"])("showPhoto", data));
+    },
+    closeModal: function closeModal() {
+      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_6__["closeModal"])());
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_user_show__WEBPACK_IMPORTED_MODULE_5__["default"]));
+
+/***/ }),
+
+/***/ "./frontend/components/profile/user_update_form.jsx":
+/*!**********************************************************!*\
+  !*** ./frontend/components/profile/user_update_form.jsx ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+var UserUpdateForm =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(UserUpdateForm, _React$Component);
+
+  function UserUpdateForm(props) {
+    var _this;
+
+    _classCallCheck(this, UserUpdateForm);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(UserUpdateForm).call(this, props));
+    var currentUser = _this.props.currentUser;
+    _this.state = {
+      username: currentUser.username,
+      profilePic: currentUser.photo_url,
+      photoFile: null
+    };
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.handleFile = _this.handleFile.bind(_assertThisInitialized(_this));
+    _this.handleCancel = _this.handleCancel.bind(_assertThisInitialized(_this));
+    _this.update = _this.update.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(UserUpdateForm, [{
+    key: "handleFile",
+    value: function handleFile(e) {
+      var _this2 = this;
+
+      var reader = new FileReader();
+      var file = e.currentTarget.files[0];
+
+      reader.onloadend = function () {
+        return _this2.setState({
+          profilePic: reader.result,
+          photoFile: file
+        });
+      };
+
+      if (file) {
+        reader.readAsDataURL(file);
+      }
+    }
+  }, {
+    key: "handleSubmit",
+    value: function handleSubmit(e) {
+      var _this3 = this;
+
+      e.preventDefault();
+
+      if (this.props.currentUser.username === "demo_user") {
+        window.alert("Unable to modify the demo user account. Create an account to user this feature");
+      } else {
+        var formData = new FormData();
+        formData.append("user[id]", this.props.currentUser.id);
+        formData.append("user[username]", this.state.username);
+
+        if (this.state.photoFile) {
+          formData.append("user[profile_photo]", this.state.photoFile);
+        }
+
+        this.props.updateUser(formData, this.props.userId).then(function () {
+          _this3.props.history.push("/users/my-profile");
+        });
+      }
+    }
+  }, {
+    key: "update",
+    value: function update(field) {
+      var _this4 = this;
+
+      return function (e) {
+        _this4.setState(_defineProperty({}, field, e.target.value));
+      };
+    }
+  }, {
+    key: "handleCancel",
+    value: function handleCancel(e) {
+      e.preventDefault();
+      var path = "/users/".concat(this.props.currentUser.id);
+      this.props.history.push(path);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var postPreview = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "preview-div update-preview"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "update-left-top"
+      }, "Profile Picture"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-pic-main"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "post-pic-preview",
+        src: this.state.profilePic
+      })));
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "post-form-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "login-errors"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "upload-form-div"
+      }, postPreview), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        className: "post-form",
+        onSubmit: this.handleSubmit
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "update-form-right"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "update-right-top"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.currentUser.username)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "update-right-mid"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "update-profile-pic"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "upload-photo",
+        htmlFor: "file-selector"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "update-profile-text"
+      }, "Update Profile Picture:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "photo-input-field int",
+        id: "file-selector",
+        type: "file",
+        onChange: this.handleFile
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "update-username"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "update-profile-text"
+      }, "Update Username:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        className: "update-text-input int",
+        placeholder: this.state.username,
+        onChange: this.update("username")
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "update-right-bottom"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "post-form-buttons"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "post-button-cancel update-cancel",
+        onClick: this.handleCancel
+      }, "Cancel"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "post-button-upload update-submit",
+        type: "submit"
+      }, "Update")))))));
+    }
+  }]);
+
+  return UserUpdateForm;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (UserUpdateForm);
+
+/***/ }),
+
+/***/ "./frontend/components/profile/user_update_form_container.js":
+/*!*******************************************************************!*\
+  !*** ./frontend/components/profile/user_update_form_container.js ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _user_update_form__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./user_update_form */ "./frontend/components/profile/user_update_form.jsx");
+/* harmony import */ var _actions_user_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/user_actions */ "./frontend/actions/user_actions.js");
+
+
+
+
+var mapStateToProps = function mapStateToProps(state) {
+  var currentUser = state.entities.users[state.session.id];
+  var userId = currentUser.id;
+  return {
+    currentUser: currentUser,
+    userId: userId
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    updateUser: function updateUser(user) {
+      return dispatch(Object(_actions_user_actions__WEBPACK_IMPORTED_MODULE_2__["updateUser"])(user));
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_user_update_form__WEBPACK_IMPORTED_MODULE_1__["default"]));
 
 /***/ }),
 
@@ -2913,9 +3432,11 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/session_actions */ "./frontend/actions/session_actions.js");
 /* harmony import */ var _actions_follows_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/follows_actions */ "./frontend/actions/follows_actions.js");
-/* harmony import */ var lodash_merge__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lodash/merge */ "./node_modules/lodash/merge.js");
-/* harmony import */ var lodash_merge__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash_merge__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _actions_user_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../actions/user_actions */ "./frontend/actions/user_actions.js");
+/* harmony import */ var lodash_merge__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! lodash/merge */ "./node_modules/lodash/merge.js");
+/* harmony import */ var lodash_merge__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(lodash_merge__WEBPACK_IMPORTED_MODULE_3__);
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -2925,11 +3446,14 @@ var usersReducer = function usersReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var action = arguments.length > 1 ? arguments[1] : undefined;
   Object.freeze(state);
-  var newState = lodash_merge__WEBPACK_IMPORTED_MODULE_2___default()({}, state);
+  var newState = lodash_merge__WEBPACK_IMPORTED_MODULE_3___default()({}, state);
 
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CURRENT_USER"]:
-      return lodash_merge__WEBPACK_IMPORTED_MODULE_2___default()({}, state, _defineProperty({}, action.user.id, action.user));
+      return lodash_merge__WEBPACK_IMPORTED_MODULE_3___default()({}, state, _defineProperty({}, action.user.id, action.user));
+
+    case _actions_user_actions__WEBPACK_IMPORTED_MODULE_2__["RECEIVE_USER"]:
+      return lodash_merge__WEBPACK_IMPORTED_MODULE_3___default()({}, state, _defineProperty({}, action.user.id, action.user));
 
     case _actions_follows_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_FOLLOW"]:
       newState[action.follow.followed_user_id].followerIds.push(action.follow.user_id);
@@ -3041,7 +3565,7 @@ __webpack_require__.r(__webpack_exports__);
 var createFollow = function createFollow(follow) {
   return $.ajax({
     method: "POST",
-    url: "api/followings",
+    url: "api/follows",
     data: {
       follow: follow
     }
@@ -3050,19 +3574,19 @@ var createFollow = function createFollow(follow) {
 var deleteFollow = function deleteFollow(followId) {
   return $.ajax({
     method: "DELETE",
-    url: "api/followings/".concat(followId)
+    url: "api/follows/".concat(followId)
   });
 };
 var fetchFollow = function fetchFollow(followId) {
   return $.ajax({
     method: "GET",
-    url: "api/followings/".concat(followId)
+    url: "api/follows/".concat(followId)
   });
 };
 var fetchUserFollows = function fetchUserFollows(userId) {
   return $.ajax({
     method: "GET",
-    url: "api/users/".concat(userId, "/followings")
+    url: "api/users/".concat(userId, "/follows")
   });
 };
 
@@ -3291,59 +3815,7 @@ var deleteUser = function deleteUser(id) {
     method: "DELETE",
     url: "api/users/".concat(id)
   });
-}; // render() {
-//   return (
-//     <form className="new-post-form" onSubmit={this.handleSubmit}>
-//       <div className="upload-form-div">
-//         <div className="preview-div">
-//           <div className="preview-outline">
-//             <img className="scanner-icon" src={this.state.photoUrl} />
-//           </div>
-//         </div>
-//       </div>
-//       <div className="post-form-right">
-//         <div className="post-right-top">
-//         </div>
-//         <div className="post-right-mid">
-//           <label className="upload-photo">
-//             <div>
-//               <input
-//                 className="photo-input-field"
-//                 id="file-selector"
-//                 type="file"
-//                 onChange={this.handleFile}
-//               />
-//             </div>
-//           </label>
-//           <label className="upload-content">
-//             <input
-//               className="title-input-field"
-//               onChange={this.handleUpdate("title")}
-//               type="text"
-//               placeholder="Give your post a title"
-//               value={this.state.title}
-//             ></input>
-//           </label>
-//         </div>
-//         <div className="post-right-bottom">
-//           <div className="post-form-buttons">
-//             <button
-//               className="post-button-cancel"
-//               onClick={this.handleCancel}
-//             >
-//               Cancel
-//               </button>
-//             <input
-//               className="post-button-upload"
-//               type="submit"
-//               value="Upload Post"
-//             />
-//           </div>
-//         </div>
-//       </div>
-//     </form>
-//   );
-// }
+};
 
 /***/ }),
 

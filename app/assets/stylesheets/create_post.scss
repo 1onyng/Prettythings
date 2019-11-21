@@ -1,14 +1,15 @@
 .new-post-form {
   display: flex;
-  margin-left: 230px;
+  flex-direction: grid;
+  margin-left: 700px;
   width: 450px;
   height: 450px;
-  justify-content: space-between;
+  justify-content: center;
   align-content: center;
 
   .upload-form-div {
     margin-top: 100px;
-    width: 600px;
+    width: 1000px;
 
     .preview-div {
       width: 400px;
@@ -17,8 +18,8 @@
       border-radius: 5px;
       //   padding: 35px;
       //   padding-left:50px;
-        // padding-bottom:20px;
-        align-content:center;
+      // padding-bottom:20px;
+      align-content:center;
 
       .preview-outline {
         justify-content: space-around;
@@ -29,7 +30,7 @@
         border-radius: 5px;
         // background-color: rgba(218,218,218,0.495);
         font-size: 120px;
-          box-shadow: 8px 21px 12px rgba(0, 0, 0, 0.2);
+        box-shadow: 8px 21px 12px rgba(0, 0, 0, 0.2);
 
         .scanner-icon {
           object-fit: contain;
@@ -44,7 +45,7 @@
     }
   }
   .post-form-right {
-    margin-left:20px;
+    margin-left: 50px;
     margin-top: 100px;
     height: 300px;
     width: 300px;
@@ -78,15 +79,15 @@
         max-width: 250px;
         width: 250px;
         margin: 5px;
-         text-align: left;
-  background-color: #fafafa;
-  padding-left: 5px;
-  text-overflow: ellipsis;
-  font-size: 14px;
-  // margin: 3px;
-  border-radius: 3px;
-  border: 1px solid #efefef;
-  box-sizing: border-box;
+        text-align: left;
+        background-color: #fafafa;
+        padding-left: 5px;
+        text-overflow: ellipsis;
+        font-size: 14px;
+        // margin: 3px;
+        border-radius: 3px;
+        border: 1px solid #efefef;
+        box-sizing: border-box;
       }
       .photo-input-field{
         // background-color: forestgreen;
@@ -135,20 +136,20 @@
       //   cursor:pointer;
       // }
       .location-input-field{
-          height: 30px;
+        height: 30px;
         max-height: 75px;
         max-width: 250px;
         width: 250px;
         margin: 5px;
-         text-align: left;
-  background-color: #fafafa;
-  padding-left: 5px;
-  text-overflow: ellipsis;
-  font-size: 14px;
-  // margin: 3px;
-  border-radius: 3px;
-  border: 1px solid #efefef;
-  box-sizing: border-box;
+        text-align: left;
+        background-color: #fafafa;
+        padding-left: 5px;
+        text-overflow: ellipsis;
+        font-size: 14px;
+        // margin: 3px;
+        border-radius: 3px;
+        border: 1px solid #efefef;
+        box-sizing: border-box;
       }
       
     }
@@ -200,3 +201,4 @@
     }
   }
 }
+

@@ -44,12 +44,8 @@ class Profile extends React.Component {
     if (!this.props.profileUser) {
       return <h2>Loading...</h2>;
     }
-    const {
-      username,
-      photoUrl,
-      followerIds,
-      followingIds
-    } = this.props.profileUser;
+    const { username, photo_url, followerIds, followingIds } = this.props.profileUser;
+    
     let userPhotos = this.props.userPosts.reverse().map(post => {
       return (
         <li key={post.id}>
@@ -58,7 +54,7 @@ class Profile extends React.Component {
               <img className="user-page-photos" src={post.photoUrl} />
               <div className="image-overlay">
                 <p className="image-overlay-text">
-                  <span className="overlay-heart">&#9829;</span>       
+                  <i className="fas fa-heart"></i >       
                   {post.likers ? post.likers.length : 0}
                   <i className="fas fa-comment" aria-hidden="true">
                   </i>
@@ -77,10 +73,7 @@ class Profile extends React.Component {
           <div className="profile-container">
             <div className="profile-top">
               <div className="profile-display-pic">
-                <img
-                  className="profile-display-pic"
-                  src={this.props.profile_picture}
-                />
+                <img className="profile-display-pic" src={photo_url}/>
               </div>
               <div className="profile-top-right">
                 <div className="profile-top-up">
@@ -122,3 +115,7 @@ class Profile extends React.Component {
 }
 
 export default Profile;
+
+
+
+
