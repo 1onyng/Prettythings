@@ -6,7 +6,7 @@ class PostIndex extends React.Component {
     super(props);
   }
   componentDidMount() {
-    this.props.fetchAllPosts();
+    this.props.action();
     this.props.closeModal();
   }
 

@@ -4,20 +4,6 @@ import { Link } from "react-router-dom";
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
-
-    this.currentUser = this.props.currentUser;
-    this.Logout = this.Logout.bind(this);
-    this.handleNewPostForm = this.handleNewPostForm.bind(this);
-  }
-
-  Logout() {
-    this.props.logout();
-  }
-
-  handleNewPostForm(e) {
-    e.preventDefault();
-    let path = "/newpost";
-    this.props.history.push(path);
   }
 
   render() {

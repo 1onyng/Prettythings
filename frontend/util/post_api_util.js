@@ -33,3 +33,10 @@ export const fetchProfilePosts = id => {
     url: `api/profile/posts/${id}`
   });
 };
+
+export const fetchExplorePosts = () => {
+ return $.ajax({
+    method: 'GET',
+    url: `/api/explore/posts`
+  })
+};

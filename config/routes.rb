@@ -17,5 +17,6 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
 
     get 'profile/posts/:id', :to => 'posts#profile_posts'
+    get 'explore/posts', :to => 'posts#explore'
   end
 end
