@@ -2,13 +2,18 @@ class Api::PostsController < ApplicationController
   before_action :require_log_in 
 
   def index
-    @posts = Post.all
+    @posts = Post.where(user_id: current_user.follows.ids)
     render :index
   end
 
   def show
     @post = Post.find(params[:id])
     render :show
+  end
+
+  def explore
+    @posts = Post.all
+    render :index
   end
 
   def profile_posts
