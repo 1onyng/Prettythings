@@ -1,5 +1,4 @@
 import React from "react";
-import GreetingContainer from './greeting/greeting_container';
 import LoginFormContainer from './forms/login_form_container';
 import SignupFormContainer from './forms/signup_form_container';
 import PostIndexContainer from "./posts/post_index_container";
