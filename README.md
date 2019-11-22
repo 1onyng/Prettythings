@@ -20,11 +20,11 @@ Photos can be uploaded via your phone or desktop computer. Users can then commen
 
 ## Profile Stats
 
-Users will have access to all photos that they have posted, as well as information on the the number of users that they are currently following and ones that are following them. On hover, each photo also displays its number of comments and likes. Members mcan also change their profile photo and username.   
+Users will have access to all photos that they have posted, as well as information on the the number of users that they are currently following and ones that are following them. On hover, each photo also displays its number of comments and likes. Members can also change their profile photo and username.   
 
 ## Personalized Image Feed
 
-Photos that are only relevant to the user (followed users) are displayed through the feed. Clicking a single photo will open a modal for a more detailed view. Users can still get the full range of the latest photos from all users by cliking the explore icon (telescope).
+Photos that are only relevant to the user (followed users) are displayed through the feed. Clicking a single photo will open a modal for a more detailed view. Users can still get the full range of the latest photos from all users by clicking the explore icon (telescope).
 
 ![Screen Shot 2019-11-22 at 11 02 26 AM](https://user-images.githubusercontent.com/52185954/69452866-9ac17500-0d17-11ea-9476-721fbe5df4ef.png)
 
