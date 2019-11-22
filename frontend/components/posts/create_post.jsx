@@ -66,7 +66,8 @@ class CreatePost extends React.Component {
 
   render() {
     return (
-      <form className="new-post-form" onSubmit={this.handleSubmit}>
+      // <div className="new-post-form" >
+        <form className="new-post-form" onSubmit={this.handleSubmit}>
         <div className="upload-form-div">
           <div className="preview-div">
             <div className="preview-outline">
@@ -115,6 +116,7 @@ class CreatePost extends React.Component {
           </div>
         </div>
       </form>
+      // </div>
     );
   }
 }
