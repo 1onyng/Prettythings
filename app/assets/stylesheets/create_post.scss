@@ -1,10 +1,10 @@
 .new-post-form {
   display: flex;
-  flex-direction: grid;
-  margin-left: 700px;
+  // flex-direction: grid;
+  margin-left: 230px;
   width: 450px;
   height: 450px;
-  justify-content: center;
+  justify-content: space-between;
   align-content: center;
 
   .upload-form-div {
