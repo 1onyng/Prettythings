@@ -14,6 +14,7 @@
 }
 
 .camera {
+  margin-top: -2px;
   width: 50px;
   height: 50px;
 }
@@ -49,6 +50,7 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
+
 }
 
 .nav-icon {
@@ -65,7 +67,6 @@
 }
 
 .user-search {
-  margin-top: 30px;
   width: 40%;
   min-width: 150px;
   height: 30px;
@@ -76,6 +77,8 @@
   border-radius: 3px;
   background-color: #fafafa;
   outline: none;
+  border: 1px solid lightgrey;
+  box-sizing: border-box;
 }
 
 .search-with-results-wrap {

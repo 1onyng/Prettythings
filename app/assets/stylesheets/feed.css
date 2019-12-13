@@ -39,9 +39,10 @@
 .feed-image-bottom-comments {
   overflow-y: scroll;
   overflow-wrap: break-word;
-  width: 480px;
-  padding-left: 5px;
+  width: 430px;
+  padding-left: 12px;
   font-size: 15px;
+  margin-bottom: 10px;
 }
 
 .feed-image-box {
@@ -81,7 +82,7 @@
 }
 
 .feed-image-bottom {
-  margin-left: 5px;
+  /* margin-left: 5px; */
   font-family: "Roboto", sans-serif;
   max-height: 210px;
   display: flex;
@@ -128,15 +129,16 @@ a.feed-profile-link {
 .feed-image-bottom-bio {
   display: flex;
   flex-direction: row;
-  padding-left: 8px;
+  padding-left: 12px;
 }
 
 .feed-comment-form {
   display: flex;
   align-items: center;
-  height: 45px;
-  margin-bottom: 8px;
+  height: 40px;
   align-self: center;
+  border-top: 1px solid lightgray;
+  padding-left: 12px;
 }
 
 .feed-bio {

@@ -40,11 +40,11 @@
 }
 
 .post-comments {
-  height: 300px;
+  height: 410px;
   border-top: 1px solid lightgrey;
   border-bottom: 1px solid lightgrey;
-  padding-left: 8px;
-  padding-top: 8px;
+  padding-left: 10px;
+  padding-top: 10px;
   overflow: auto;
   font-size: 14px;
 }
@@ -65,16 +65,15 @@
   margin-bottom: 10px;
 }
 .title-span {
-  margin-left: 5px;
+  margin-left: 12px;
   font-weight: 700;
   font-size: 16px;
   font-family: "Roboto", sans-serif;
-  padding-left: 5px;
 }
 .show-buttons {
   display: flex;
   align-items: center;
-  margin-left: 15px;
+  margin-left: 10px;
 }
 
 .show-buttons:hover {
@@ -82,7 +81,7 @@
 }
 
 .show-likecount {
-  margin-left: 20px;
+  margin-left: 12px;
 }
 
 .show-icon {
@@ -109,16 +108,16 @@
   margin-left: 40px;
   margin-bottom: 10px;
   text-align: left;
-  width: 250px;
+  width: 510px;
   height: 35px;
-  background-color: #fafafa;
-  padding-left: 5px;
+  /* padding-left: 5px; */
   text-overflow: ellipsis;
   font-size: 14px;
   margin: 3px;
   border-radius: 3px;
-  border: 1px solid #efefef;
+  border: none;
   box-sizing: border-box;
+  outline: none;
 }
 .delete-button {
   font-size: 18px;
@@ -132,7 +131,7 @@
 }
 
 .submit-comment-button-index {
-  margin-left: 115px;
+  /* margin-left: 115px; */
   display: flex;
   width: 80px;
   height: 20px;
@@ -147,6 +146,7 @@
   border-radius: 4px;
   outline: none;
   border: 1px solid #fafafa;
+  padding-right: 10px;
 }
 .submit-comment-button-index:hover {
   cursor: pointer;
@@ -158,18 +158,17 @@
 .submit-comment-button {
   margin-left: 20px;
   display: flex;
-  width: 250px;
-  height: 40px;
+  /* width: 250px;
+  height: 40px; */
   justify-content: space-around;
-
   text-overflow: ellipsis;
   font-size: 14px;
   font-weight: 700;
-  color: white;
+  color: #3897f0;
   margin: 3px;
   box-sizing: border-box;
-  margin-bottom: 7px;
-  background-color: #3897f0;
+  margin-bottom: 3px;
+  background-color: white;
   border-radius: 4px;
   outline: none;
   border: 1px solid #fafafa;
@@ -178,7 +177,7 @@
   margin-left: 40px;
   margin-bottom: 5px;
   text-align: left;
-  width: 250px;
+  width: 500px;
   height: 40px;
   background-color: #fafafa;
   padding-left: 5px;
@@ -188,10 +187,20 @@
   border-radius: 3px;
   border: 1px solid #efefef;
   box-sizing: border-box;
+  outline: none;
 }
 
+.show-comment-container {
+  border-top: 1px solid lightgrey;
+}
+
+.likes-div {
+  padding-bottom: 8px;
+}
 .show-comment-form {
-  margin-left: 20px;
+  /* margin-left: 20px; */
+  display: flex;
+  align-items: center;
 }
 
 .feed-image-bottom-likes {
