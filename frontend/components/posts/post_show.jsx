@@ -141,7 +141,7 @@ class PostShow extends React.Component {
                 <div className="show-buttons">
                   <LikesContainer post={this.props.post} likers={likers} />
                   <i
-                    class="far fa-comment-alt"
+                    className="far fa-comment-alt"
                     onClick={this.handleComment}
                   ></i>
                 </div>
