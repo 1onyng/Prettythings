@@ -145,7 +145,7 @@
   background-color:white;
   border-radius: 4px;
   outline: none;
-  border: 1px solid #fafafa;
+  border: 1px solid white;
   padding-right: 10px;
 }
 .submit-comment-button-index:hover {
@@ -171,7 +171,7 @@
   background-color: white;
   border-radius: 4px;
   outline: none;
-  border: 1px solid #fafafa;
+  border: 1px solid white;
 }
 .show-textarea {
   margin-left: 40px;
@@ -179,13 +179,13 @@
   text-align: left;
   width: 500px;
   height: 40px;
-  background-color: #fafafa;
+  background-color: white;
   padding-left: 5px;
   text-overflow: ellipsis;
   font-size: 14px;
   margin: 3px;
   border-radius: 3px;
-  border: 1px solid #efefef;
+  border: 1px solid white;
   box-sizing: border-box;
   outline: none;
 }
