@@ -18,6 +18,22 @@ Users can create and log in to accounts. Passwords are managed using the BCrypt 
 
 Photos can be uploaded via your phone or desktop computer. Users can then comment and/or like directly below the photo.
 
+```javascript
+  handleUnlike(e) {
+    e.preventDefault();
+
+    this.props.deleteLike(this.props.post.id).then(() => {
+      this.props.fetchPost(this.props.post.id);
+    });
+  }
+  handleLike(e) {
+    e.preventDefault();
+    this.props.createLike({ post_id: this.props.post.id }).then(() => {
+      this.props.fetchPost(this.props.post.id);
+    });
+  }
+  ```
+
 ## Profile Stats
 
 Users will have access to all photos that they have posted, as well as information on the the number of users that they are currently following and ones that are following them. On hover, each photo also displays its number of comments and likes. Members can also change their profile photo and username.   
@@ -27,6 +43,21 @@ Users will have access to all photos that they have posted, as well as informati
 Photos that are only relevant to the user (followed users) are displayed through the feed. Clicking a single photo will open a modal for a more detailed view. Users can still get the full range of the latest photos from all users by clicking the explore icon (telescope).
 
 ![Screen Shot 2019-11-22 at 11 02 26 AM](https://user-images.githubusercontent.com/52185954/69452866-9ac17500-0d17-11ea-9476-721fbe5df4ef.png)
+
+## User Search
+
+Users are able to search for other users via the search bar. Selecting a user in the dropdown redirects the user to the searched user's profile page.
+
+```javascript
+let userMatches = this.props.users.filter(user =>
+  user.username.toUpperCase().includes(e.target.value.toUpperCase())
+);
+if (!e.target.value) userMatches = [];
+this.setState({
+  matches: userMatches,
+  searchField: e.target.value
+});
+ ```
 
 ## Technologies 
 * Javascript
@@ -42,6 +73,9 @@ Photos that are only relevant to the user (followed users) are displayed through
 * Bcrypt for user authorization
 * AWS S3 buckets to store user and listing photos
 
+## Future Implementations
+* Notify user when other users submit a like or comment on their post. 
+* Allow users to upload video snippets.  
 
 
 

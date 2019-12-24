@@ -71,7 +71,7 @@ class CreatePost extends React.Component {
         <div className="upload-form-div">
           <div className="preview-div">
             <div className="preview-outline">
-              <img className="scanner-icon" src={this.state.photoUrl} />
+              <x className="scanner-icon" src={this.state.photoUrl} />
             </div>
           </div>
         </div>
