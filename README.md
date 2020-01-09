@@ -1,12 +1,14 @@
 # [Pretty Things](https://pretty-things.herokuapp.com/#/)
----
 
 ## Technologies 
+
 * Javascript
 * Ruby on Rails
 * React
 * PostgreSQL
 * AWS S3
+
+## Summary
 
 Pretty Things is a social networking clone of Instagram. It allows users to upload pictures and communicate with each other by posting comments and likes where each picture is the focal point of the discussion.
 
