@@ -12,7 +12,7 @@
 
 Pretty Things is a social networking clone of Instagram. It allows users to upload pictures and communicate with each other by posting comments and likes where each picture is the focal point of the discussion.
 
-The front end is developed using React.js and Redux, along with PostgreSQL and Rails to build the back end. Image hosting is supported by Amazon Web Services.
+The front-end is developed using React.js and Redux, along with PostgreSQL and Rails to build the back end. Image hosting is supported by Amazon Web Services.
 
 ![Screen Shot 2019-11-22 at 9 48 50 AM](https://user-images.githubusercontent.com/52185954/69448418-55984580-0d0d-11ea-999e-65b82cbe20e1.png)
 
@@ -67,6 +67,7 @@ this.setState({
 });
  ```
 ## Future Implementations
+
 * Notify user when other users submit a like or comment on their post. 
 * Allow users to upload video snippets.  
 
