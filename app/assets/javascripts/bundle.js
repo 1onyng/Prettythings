@@ -3579,6 +3579,9 @@ var usersReducer = function usersReducer() {
     case _actions_user_actions__WEBPACK_IMPORTED_MODULE_2__["RECEIVE_USER"]:
       return lodash_merge__WEBPACK_IMPORTED_MODULE_3___default()({}, state, _defineProperty({}, action.user.id, action.user));
 
+    case _actions_user_actions__WEBPACK_IMPORTED_MODULE_2__["RECEIVE_ALL_USERS"]:
+      return lodash_merge__WEBPACK_IMPORTED_MODULE_3___default()({}, state, action.users);
+
     case _actions_follows_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_FOLLOW"]:
       newState[action.follow.followed_user_id].followerIds.push(action.follow.user_id);
       newState[action.follow.user_id].followingIds.push(action.follow.followed_user_id);
@@ -41271,7 +41274,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
