@@ -683,165 +683,258 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+// import React from 'react';
+// import { Link } from 'react-router-dom';
+// export default class SessionForm extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = { username: "", password: "" };
+//     this.handleSubmit = this.handleSubmit.bind(this);
+//     this.demoUser = this.demoUser.bind(this);
+//   }
+//   componentDidMount() {
+//     this.props.clearErrors();
+//   }
+//   handleSubmit(e) {
+//     e.preventDefault();
+//     const user = Object.assign({}, this.state);
+//     this.props.processForm(user);
+//   }
+//   update(field) {
+//     return e => this.setState({ [field]: e.currentTarget.value });
+//   }
+//   demoUser(e) {
+//     e.preventDefault();
+//     this.props.processDemo({
+//       username: 'demo_user',
+//       password: 'hunter02'
+//     })
+//   }
+//   renderErrors() {
+//     return (
+//       <ul className="login-errors">
+//         {this.props.errors.map((error, i) => (
+//           <li key={`error-${i}`}>
+//             {error}
+//           </li>
+//         ))}
+//       </ul>
+//     );
+//   }
+//   render() {
+//     let link; 
+//     let path;
+//     let instruct;
+//     let greet;
+//     if (this.props.formType === 'Log in') {
+//       link = 'Sign Up';
+//       path = '/signup';
+//       instruct = "Don't have an account? "
+//       greet = ''
+//     } else {
+//       link = 'Log in';
+//       path = '/login';
+//       instruct = "Have an account? "
+//       greet = 'Sign up to see photos and videos from your friends.'
+//     }
+//     return (
+//       <div className="login-page-container">
+//         <div className="login-left">
+//           <div className="login-left-image-container">
+//             <img
+//               className="login-left-image"
+//               src="https://www.instagram.com/static/images/homepage/home-phones@2x.png/9364675fb26a.png"
+//             />
+//             <img
+//               className="login-left-image-inner"
+//               src="https://www.instagram.com/static/images/homepage/screenshot5.jpg/0a2d3016f375.jpg"
+//             />
+//           </div>
+//         </div>      
+//         <div className="login-right">
+//           <div className="login-form-container">
+//             <form onSubmit={this.handleSubmit}>
+//               <h1 className="login-logo">Pretty Things</h1>
+//               <div className="login-form">
+//                 <p className="greet">{greet}</p>           
+//                 <label>
+//                   <input 
+//                     className="login-input"
+//                     type="text"
+//                     onChange={this.update("username")}
+//                     placeholder="Username"
+//                     value={this.state.username}
+//                   />
+//                 </label>
+//                 <br/>
+//                 <label>
+//                   <input 
+//                     className="login-input"
+//                     type="password"
+//                     onChange={this.update("password")}
+//                     placeholder="Password"
+//                     value={this.state.password}
+//                   />
+//                 </label>
+//                 <br/>
+//                 <button 
+//                   className="button login">
+//                   {this.props.formType}
+//                 </button>
+//                 <br/>
+//                 &nbsp;OR&nbsp;
+//                 <br/>
+//                 <button 
+//                   className="button demo"
+//                   onClick={this.demoUser}>
+//                   Demo Log in 
+//                 </button>
+//                 <div className="login-errors-ul">
+//                   {this.renderErrors()}
+//                 </div>
+//               </div> 
+//             </form>
+//           </div>
+//           <div className="login-signup-link">
+//             <div>
+//               {instruct}
+//               <Link to={path}>{link}</Link>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//     );
+//   }
+// }
 
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+function SessionForm(props) {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
+      _useState2 = _slicedToArray(_useState, 2),
+      username = _useState2[0],
+      setUsername = _useState2[1];
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
+      _useState4 = _slicedToArray(_useState3, 2),
+      password = _useState4[0],
+      setPassword = _useState4[1]; // useEffect(() => {
+  //   props.clearErrors();
+  // });
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-
-
-
-var SessionForm =
-/*#__PURE__*/
-function (_React$Component) {
-  _inherits(SessionForm, _React$Component);
-
-  function SessionForm(props) {
-    var _this;
-
-    _classCallCheck(this, SessionForm);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(SessionForm).call(this, props));
-    _this.state = {
-      username: "",
-      password: ""
-    };
-    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
-    _this.demoUser = _this.demoUser.bind(_assertThisInitialized(_this));
-    return _this;
+  function handleSubmit(e) {
+    e.preventDefault();
+    var user = Object.assign({}, {
+      username: username,
+      password: password
+    });
+    props.processForm(user);
   }
 
-  _createClass(SessionForm, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      this.props.clearErrors();
-    }
-  }, {
-    key: "handleSubmit",
-    value: function handleSubmit(e) {
-      e.preventDefault();
-      var user = Object.assign({}, this.state);
-      this.props.processForm(user);
-    }
-  }, {
-    key: "update",
-    value: function update(field) {
-      var _this2 = this;
-
+  function update(field) {
+    if (field === "username") {
       return function (e) {
-        return _this2.setState(_defineProperty({}, field, e.currentTarget.value));
+        return setUsername(e.currentTarget.value);
+      };
+    } else if (field === "password") {
+      return function (e) {
+        return setPassword(e.currentTarget.value);
       };
     }
-  }, {
-    key: "demoUser",
-    value: function demoUser(e) {
-      e.preventDefault();
-      this.props.processDemo({
-        username: 'demo_user',
-        password: 'hunter02'
-      });
-    }
-  }, {
-    key: "renderErrors",
-    value: function renderErrors() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-        className: "login-errors"
-      }, this.props.errors.map(function (error, i) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-          key: "error-".concat(i)
-        }, error);
-      }));
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      var link;
-      var path;
-      var instruct;
-      var greet;
+  }
 
-      if (this.props.formType === 'Log in') {
-        link = 'Sign Up';
-        path = '/signup';
-        instruct = "Don't have an account? ";
-        greet = '';
-      } else {
-        link = 'Log in';
-        path = '/login';
-        instruct = "Have an account? ";
-        greet = 'Sign up to see photos and videos from your friends.';
-      }
+  function demoUser(e) {
+    e.preventDefault();
+    props.processDemo({
+      username: 'demo_user',
+      password: 'hunter02'
+    });
+  }
 
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "login-page-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "login-left"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "login-left-image-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        className: "login-left-image",
-        src: "https://www.instagram.com/static/images/homepage/home-phones@2x.png/9364675fb26a.png"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        className: "login-left-image-inner",
-        src: "https://www.instagram.com/static/images/homepage/screenshot5.jpg/0a2d3016f375.jpg"
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "login-right"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "login-form-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        onSubmit: this.handleSubmit
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-        className: "login-logo"
-      }, "Pretty Things"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "login-form"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "greet"
-      }, greet), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        className: "login-input",
-        type: "text",
-        onChange: this.update("username"),
-        placeholder: "Username",
-        value: this.state.username
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        className: "login-input",
-        type: "password",
-        onChange: this.update("password"),
-        placeholder: "Password",
-        value: this.state.password
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "button login"
-      }, this.props.formType), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\xA0OR\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "button demo",
-        onClick: this.demoUser
-      }, "Demo Log in"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "login-errors-ul"
-      }, this.renderErrors())))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "login-signup-link"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, instruct, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: path
-      }, link)))));
-    }
-  }]);
+  function renderErrors() {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+      className: "login-errors"
+    }, props.errors.map(function (error, i) {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        key: "error-".concat(i)
+      }, error);
+    }));
+  }
 
-  return SessionForm;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+  var link;
+  var path;
+  var instruct;
+  var greet;
 
+  if (props.formType === 'Log in') {
+    link = 'Sign Up';
+    path = '/signup';
+    instruct = "Don't have an account? ";
+    greet = '';
+  } else {
+    link = 'Log in';
+    path = '/login';
+    instruct = "Have an account? ";
+    greet = 'Sign up to see photos and videos from your friends.';
+  }
 
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "login-page-container"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "login-left"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "login-left-image-container"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "login-left-image",
+    src: "https://www.instagram.com/static/images/homepage/home-phones@2x.png/9364675fb26a.png"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "login-left-image-inner",
+    src: "https://www.instagram.com/static/images/homepage/screenshot5.jpg/0a2d3016f375.jpg"
+  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "login-right"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "login-form-container"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+    onSubmit: handleSubmit
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+    className: "login-logo"
+  }, "Pretty Things"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "login-form"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "greet"
+  }, greet), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    className: "login-input",
+    type: "text",
+    onChange: update("username"),
+    placeholder: "Username",
+    value: username
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    className: "login-input",
+    type: "password",
+    onChange: update("password"),
+    placeholder: "Password",
+    value: password
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "button login"
+  }, props.formType), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\xA0OR\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "button demo",
+    onClick: demoUser
+  }, "Demo Log in"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "login-errors-ul"
+  }, renderErrors())))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "login-signup-link"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, instruct, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: path
+  }, link)))));
+}
 
 /***/ }),
 
