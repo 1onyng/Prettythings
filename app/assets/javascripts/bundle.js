@@ -1421,177 +1421,132 @@ function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-var CreatePost =
-/*#__PURE__*/
-function (_React$Component) {
-  _inherits(CreatePost, _React$Component);
+function CreatePost(props) {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
+      _useState2 = _slicedToArray(_useState, 2),
+      title = _useState2[0],
+      setTitle = _useState2[1];
 
-  function CreatePost(props) {
-    var _this;
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
+      _useState4 = _slicedToArray(_useState3, 2),
+      photoFile = _useState4[0],
+      setPhotoFile = _useState4[1];
 
-    _classCallCheck(this, CreatePost);
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('https://pretty-things-seeds.s3-us-west-1.amazonaws.com/upload-photo.jpg'),
+      _useState6 = _slicedToArray(_useState5, 2),
+      photoUrl = _useState6[0],
+      setPhotoUrl = _useState6[1];
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(CreatePost).call(this, props));
-    _this.state = {
-      title: "",
-      photo: "",
-      photoFile: null,
-      photoUrl: "https://pretty-things-seeds.s3-us-west-1.amazonaws.com/upload-photo.jpg"
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    props.fetchUser(props.currentUser.id);
+  }, []);
+
+  function handleFile(e) {
+    var fileReader = new FileReader();
+    var file = e.currentTarget.files[0];
+
+    fileReader.onloadend = function () {
+      setPhotoFile(file);
+      setPhotoUrl(fileReader.result);
     };
-    _this.handleFile = _this.handleFile.bind(_assertThisInitialized(_this));
-    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
-    _this.handleUpdate = _this.handleUpdate.bind(_assertThisInitialized(_this));
-    _this.handleCancel = _this.handleCancel.bind(_assertThisInitialized(_this));
-    return _this;
+
+    if (file) {
+      fileReader.readAsDataURL(file);
+    } else {
+      setPhotoUrl('');
+      setPhotoFile(null);
+    }
   }
 
-  _createClass(CreatePost, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      this.props.fetchUser(this.props.currentUser.id);
+  function handleSubmit(e) {
+    e.preventDefault();
+    var formData = new FormData();
+    formData.append("post[title]", title);
+
+    if (photoFile) {
+      formData.append("post[photo]", photoFile);
+      formData.append("post[title]", title);
+      formData.append("post[user_id]", props.currentUser.id);
     }
-  }, {
-    key: "handleFile",
-    value: function handleFile(e) {
-      var _this2 = this;
 
-      var fileReader = new FileReader();
-      var file = e.currentTarget.files[0];
+    $.ajax({
+      url: "/api/posts",
+      method: "POST",
+      data: formData,
+      contentType: false,
+      processData: false
+    }).then(function () {
+      props.history.push("/users/my-profile");
+    });
+  }
 
-      fileReader.onloadend = function () {
-        return _this2.setState({
-          photoFile: file,
-          photoUrl: fileReader.result
-        });
-      };
+  function handleCancel(e) {
+    e.preventDefault();
+    props.history.push("/users/my-profile");
+  }
 
-      if (file) {
-        fileReader.readAsDataURL(file);
-      } else {
-        this.setState({
-          photoUrl: "",
-          photoFile: null
-        });
-      }
-    }
-  }, {
-    key: "handleSubmit",
-    value: function handleSubmit(e) {
-      var _this3 = this;
+  function handleUpdate(field) {
+    if (field === "title") return function (e) {
+      return setTitle(e.target.value);
+    };
+  }
 
-      e.preventDefault();
-      var formData = new FormData();
-      formData.append("post[title]", this.state.title);
-
-      if (this.state.photoFile) {
-        formData.append("post[photo]", this.state.photoFile);
-        formData.append("post[title]", this.state.title);
-        formData.append("post[user_id]", this.props.currentUser.id);
-      }
-
-      $.ajax({
-        url: "/api/posts",
-        method: "POST",
-        data: formData,
-        contentType: false,
-        processData: false
-      }).then(function () {
-        _this3.props.history.push("/users/my-profile");
-      });
-    }
-  }, {
-    key: "handleCancel",
-    value: function handleCancel(e) {
-      e.preventDefault();
-      this.props.history.push("/users/my-profile");
-    }
-  }, {
-    key: "handleUpdate",
-    value: function handleUpdate(field) {
-      var _this4 = this;
-
-      return function (e) {
-        _this4.setState(_defineProperty({}, field, e.target.value));
-      };
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      return (// <div className="new-post-form" >
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-          className: "new-post-form",
-          onSubmit: this.handleSubmit
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "upload-form-div"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "preview-div"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "preview-outline"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("x", {
-          className: "scanner-icon",
-          src: this.state.photoUrl
-        })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "post-form-right"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "post-right-top"
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "post-right-mid"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-          className: "upload-photo"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-          className: "photo-input-field",
-          id: "file-selector",
-          type: "file",
-          onChange: this.handleFile
-        }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-          className: "upload-content"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-          className: "title-input-field",
-          onChange: this.handleUpdate("title"),
-          type: "text",
-          placeholder: "Write a caption...",
-          value: this.state.title
-        }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "post-right-bottom"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "post-form-buttons"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          className: "post-button-cancel",
-          onClick: this.handleCancel
-        }, "Cancel"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-          className: "post-button-upload",
-          type: "submit",
-          value: "Upload Post"
-        }))))) // </div>
-
-      );
-    }
-  }]);
-
-  return CreatePost;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+    className: "new-post-form",
+    onSubmit: handleSubmit
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "upload-form-div"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "preview-div"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "preview-outline"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "scanner-icon",
+    src: photoUrl
+  })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "post-form-right"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "post-right-top"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "post-right-mid"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    className: "upload-photo"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    className: "photo-input-field",
+    id: "file-selector",
+    type: "file",
+    onChange: handleFile
+  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    className: "upload-content"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    className: "title-input-field",
+    onChange: handleUpdate("title"),
+    type: "text",
+    placeholder: "Write a caption...",
+    value: title
+  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "post-right-bottom"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "post-form-buttons"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "post-button-cancel",
+    onClick: handleCancel
+  }, "Cancel"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    className: "post-button-upload",
+    type: "submit",
+    value: "Upload Post"
+  })))));
+}
 
 /* harmony default export */ __webpack_exports__["default"] = (CreatePost);
 
