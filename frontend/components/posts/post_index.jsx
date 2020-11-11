@@ -1,40 +1,37 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PostIndexItemContainer from "./post_index_item_container";
 
-class PostIndex extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  componentDidMount() {
-    this.props.action();
-    this.props.closeModal();
-  }
+function PostIndex(props) {
 
-  render() {
-    const { posts } = this.props;
-    return (
-      <div>
-        <section className="feed-container">
-          <div className="feed-left"></div>
-          <div className="feed-mid">
-            <ul className="feed-images">
-              {posts.reverse().map((post, i) => {
-                return (
-                  <div key={i}>
-                    <PostIndexItemContainer
-                      key={post.id} 
-                      post={post} 
-                    />
-                  </div>
-                );
-              })}
-            </ul>
-          </div>
-          <div className="feed-right"></div>
-        </section>
-      </div>
-    );
-  }
+  useEffect(() => { 
+    props.action();
+    props.closeModal();
+  }, [])
+
+  const { posts } = props;
+  return (
+    <div>
+      <section className="feed-container">
+        <div className="feed-left"></div>
+        <div className="feed-mid">
+          <ul className="feed-images">
+            {posts.reverse().map((post, i) => {
+              return (
+                <div key={i}>
+                  <PostIndexItemContainer
+                    key={post.id} 
+                    post={post} 
+                  />
+                </div>
+              );
+            })}
+          </ul>
+        </div>
+        <div className="feed-right"></div>
+      </section>
+    </div>
+  );
 }
 
 export default PostIndex;
+
