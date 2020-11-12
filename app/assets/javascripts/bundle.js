@@ -2678,175 +2678,136 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-var UserUpdateForm =
-/*#__PURE__*/
-function (_React$Component) {
-  _inherits(UserUpdateForm, _React$Component);
+function UserUpdateForm(props) {
+  var currentUser = props.currentUser;
 
-  function UserUpdateForm(props) {
-    var _this;
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(currentUser.username),
+      _useState2 = _slicedToArray(_useState, 2),
+      username = _useState2[0],
+      setUsername = _useState2[1];
 
-    _classCallCheck(this, UserUpdateForm);
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(currentUser.photo_url),
+      _useState4 = _slicedToArray(_useState3, 2),
+      profilePic = _useState4[0],
+      setProfilePic = _useState4[1];
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(UserUpdateForm).call(this, props));
-    var currentUser = _this.props.currentUser;
-    _this.state = {
-      username: currentUser.username,
-      profilePic: currentUser.photo_url,
-      photoFile: null
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
+      _useState6 = _slicedToArray(_useState5, 2),
+      photoFile = _useState6[0],
+      setPhotoFile = _useState6[1];
+
+  function handleFile(e) {
+    var reader = new FileReader();
+    var file = e.currentTarget.files[0];
+
+    reader.onloadend = function () {
+      setProfilePic(reader.result);
+      setPhotoFile(file);
     };
-    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
-    _this.handleFile = _this.handleFile.bind(_assertThisInitialized(_this));
-    _this.handleCancel = _this.handleCancel.bind(_assertThisInitialized(_this));
-    _this.update = _this.update.bind(_assertThisInitialized(_this));
-    return _this;
+
+    if (file) reader.readAsDataURL(file);
   }
 
-  _createClass(UserUpdateForm, [{
-    key: "handleFile",
-    value: function handleFile(e) {
-      var _this2 = this;
+  function handleSubmit(e) {
+    e.preventDefault();
 
-      var reader = new FileReader();
-      var file = e.currentTarget.files[0];
+    if (currentUser.username === "demo_user") {
+      window.alert("Unable to modify the demo user account. Create an account to user this feature");
+    } else {
+      var formData = new FormData();
+      formData.append("user[id]", currentUser.id);
+      formData.append("user[username]", username);
 
-      reader.onloadend = function () {
-        return _this2.setState({
-          profilePic: reader.result,
-          photoFile: file
-        });
-      };
-
-      if (file) {
-        reader.readAsDataURL(file);
+      if (photoFile) {
+        formData.append("user[profile_photo]", photoFile);
       }
+
+      props.updateUser(formData, props.userId).then(function () {
+        props.history.push("/users/my-profile");
+      });
     }
-  }, {
-    key: "handleSubmit",
-    value: function handleSubmit(e) {
-      var _this3 = this;
+  }
 
-      e.preventDefault();
+  function update(field) {
+    if (field === 'username') return function (e) {
+      return setUsername(e.target.value);
+    };
+  }
 
-      if (this.props.currentUser.username === "demo_user") {
-        window.alert("Unable to modify the demo user account. Create an account to user this feature");
-      } else {
-        var formData = new FormData();
-        formData.append("user[id]", this.props.currentUser.id);
-        formData.append("user[username]", this.state.username);
+  function handleCancel(e) {
+    e.preventDefault();
+    var path = "/users/".concat(props.currentUser.id);
+    props.history.push(path);
+  }
 
-        if (this.state.photoFile) {
-          formData.append("user[profile_photo]", this.state.photoFile);
-        }
-
-        this.props.updateUser(formData, this.props.userId).then(function () {
-          _this3.props.history.push("/users/my-profile");
-        });
-      }
-    }
-  }, {
-    key: "update",
-    value: function update(field) {
-      var _this4 = this;
-
-      return function (e) {
-        _this4.setState(_defineProperty({}, field, e.target.value));
-      };
-    }
-  }, {
-    key: "handleCancel",
-    value: function handleCancel(e) {
-      e.preventDefault();
-      var path = "/users/".concat(this.props.currentUser.id);
-      this.props.history.push(path);
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      var postPreview = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "preview-div update-preview"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "update-left-top"
-      }, "Profile Picture"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "profile-pic-main"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        className: "post-pic-preview",
-        src: this.state.profilePic
-      })));
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "post-form-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-        className: "login-errors"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "upload-form-div"
-      }, postPreview), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        className: "post-form",
-        onSubmit: this.handleSubmit
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "update-form-right"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "update-right-top"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.currentUser.username)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "update-right-mid"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "update-profile-pic"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        className: "upload-photo",
-        htmlFor: "file-selector"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "update-profile-text"
-      }, "Update Profile Picture:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        className: "photo-input-field int",
-        id: "file-selector",
-        type: "file",
-        onChange: this.handleFile
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        className: "update-username"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "update-profile-text"
-      }, "Update Username:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "text",
-        className: "update-text-input int",
-        placeholder: this.state.username,
-        onChange: this.update("username")
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "update-right-bottom"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "post-form-buttons"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "post-button-cancel update-cancel",
-        onClick: this.handleCancel
-      }, "Cancel"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "post-button-upload update-submit",
-        type: "submit"
-      }, "Update")))))));
-    }
-  }]);
-
-  return UserUpdateForm;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+  var postPreview = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "preview-div update-preview"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "update-left-top"
+  }, "Profile Picture"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "profile-pic-main"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "post-pic-preview",
+    src: profilePic
+  })));
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "post-form-container"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+    className: "login-errors"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "upload-form-div"
+  }, postPreview), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+    className: "post-form",
+    onSubmit: handleSubmit
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "update-form-right"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "update-right-top"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, currentUser.username)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "update-right-mid"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "update-profile-pic"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    className: "upload-photo",
+    htmlFor: "file-selector"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "update-profile-text"
+  }, "Update Profile Picture:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    className: "photo-input-field int",
+    id: "file-selector",
+    type: "file",
+    onChange: handleFile
+  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    className: "update-username"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "update-profile-text"
+  }, "Update Username:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "text",
+    className: "update-text-input int",
+    placeholder: username,
+    onChange: update("username")
+  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "update-right-bottom"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "post-form-buttons"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "post-button-cancel update-cancel",
+    onClick: handleCancel
+  }, "Cancel"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "post-button-upload update-submit",
+    type: "submit"
+  }, "Update")))))));
+}
 
 /* harmony default export */ __webpack_exports__["default"] = (UserUpdateForm);
 
