@@ -5,6 +5,14 @@ function UserUpdateForm(props) {
   const [username, setUsername] = useState(currentUser.username);
   const [profilePic, setProfilePic] = useState(currentUser.photo_url);
   const [photoFile, setPhotoFile] = useState(null);
+  let postPreview = (
+    <div className="preview-div update-preview">
+      <div className="update-left-top">Profile Picture</div>
+      <div className="profile-pic-main">
+        <img className="post-pic-preview" src={profilePic} />
+      </div>
+    </div>
+  );
 
   function handleFile(e) {
     const reader = new FileReader();
@@ -20,12 +28,13 @@ function UserUpdateForm(props) {
     e.preventDefault();
     if (currentUser.username === "demo_user") {
       window.alert(
-        "Unable to modify the demo user account. Create an account to user this feature"
+        "Unable to modify the demo user account. Create an account to use this feature"
       );
     } else {
       const formData = new FormData();
       formData.append("user[id]", currentUser.id);
       formData.append("user[username]", username);
+      debugger;
       if (photoFile) {
         formData.append("user[profile_photo]", photoFile);
       }
@@ -45,21 +54,11 @@ function UserUpdateForm(props) {
     props.history.push(path);
   }
 
-  let postPreview = (
-    <div className="preview-div update-preview">
-      <div className="update-left-top">Profile Picture</div>
-      <div className="profile-pic-main">
-        <img className="post-pic-preview" src={profilePic} />
-      </div>
-    </div>
-  );
-
   return (
     <div>
       <div className="post-form-container">
-        <ul className="login-errors"></ul>
+        {/* <ul className="login-errors"></ul> */}
         <div className="upload-form-div">{postPreview}</div>
-
         <form className="post-form" onSubmit={handleSubmit}>
           <div className="update-form-right">
             <div className="update-right-top">

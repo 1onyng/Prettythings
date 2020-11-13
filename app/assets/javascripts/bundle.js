@@ -2706,6 +2706,17 @@ function UserUpdateForm(props) {
       photoFile = _useState6[0],
       setPhotoFile = _useState6[1];
 
+  var postPreview = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "preview-div update-preview"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "update-left-top"
+  }, "Profile Picture"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "profile-pic-main"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "post-pic-preview",
+    src: profilePic
+  })));
+
   function handleFile(e) {
     var reader = new FileReader();
     var file = e.currentTarget.files[0];
@@ -2722,11 +2733,12 @@ function UserUpdateForm(props) {
     e.preventDefault();
 
     if (currentUser.username === "demo_user") {
-      window.alert("Unable to modify the demo user account. Create an account to user this feature");
+      window.alert("Unable to modify the demo user account. Create an account to use this feature");
     } else {
       var formData = new FormData();
       formData.append("user[id]", currentUser.id);
       formData.append("user[username]", username);
+      debugger;
 
       if (photoFile) {
         formData.append("user[profile_photo]", photoFile);
@@ -2750,21 +2762,9 @@ function UserUpdateForm(props) {
     props.history.push(path);
   }
 
-  var postPreview = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "preview-div update-preview"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "update-left-top"
-  }, "Profile Picture"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "profile-pic-main"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    className: "post-pic-preview",
-    src: profilePic
-  })));
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "post-form-container"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-    className: "login-errors"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "upload-form-div"
   }, postPreview), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
     className: "post-form",
