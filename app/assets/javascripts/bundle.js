@@ -1916,6 +1916,13 @@ function PostShow(props) {
       commentBody = _useState2[0],
       setCommentBody = _useState2[1];
 
+  var _props$post = props.post,
+      photoUrl = _props$post.photoUrl,
+      author = _props$post.author,
+      body = _props$post.body,
+      user_id = _props$post.user_id,
+      likers = _props$post.likers,
+      authorPhotoUrl = _props$post.authorPhotoUrl;
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     props.fetchPost(props.post.id);
     props.fetchPostComments(props.post.id);
@@ -1992,13 +1999,6 @@ function PostShow(props) {
       }
     }, "X") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null));
   });
-  var _props$post = props.post,
-      photoUrl = _props$post.photoUrl,
-      author = _props$post.author,
-      body = _props$post.body,
-      user_id = _props$post.user_id,
-      likers = _props$post.likers,
-      authorPhotoUrl = _props$post.authorPhotoUrl;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, renderErrors(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "post-box"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {

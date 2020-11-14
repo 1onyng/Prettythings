@@ -4,6 +4,7 @@ import LikesContainer from "../like/like_container";
 
 function PostShow(props) {
   const [commentBody, setCommentBody] = useState('');
+  const { photoUrl, author, body, user_id, likers, authorPhotoUrl } = props.post;
 
   useEffect(() => {
     props.fetchPost(props.post.id);
@@ -79,8 +80,6 @@ function PostShow(props) {
       </div>
     );
   });
-
-  const { photoUrl, author, body, user_id, likers, authorPhotoUrl } = props.post;
     
   return (
     <div>
